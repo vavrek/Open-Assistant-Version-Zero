@@ -78,7 +78,7 @@ Next Steps
 * Galactic Exploration!
 
 
-Join Us
--------
+Join Us!
+--------
 
-Join our development working group at: `openassistant.org <http://www.openassistant.org/>`
+Join our development working group at: http://www.openassistant.org
