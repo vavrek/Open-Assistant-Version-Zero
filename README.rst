@@ -51,7 +51,7 @@ Running OpenAssistant
 
 * To quit, say "Goodbye" or "Farewell."
 
-* To change assistant commands and language, edit ``etc/commands.json``. Exit and relaunch ``assist.sh``.
+* To change assistant commands and language, edit ``./etc/commands.json``. Exit and relaunch ``assist.sh``.
 
 
 Next Steps
