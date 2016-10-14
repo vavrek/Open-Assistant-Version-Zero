@@ -43,17 +43,15 @@ Running OpenAssistant
 
 * Make ``assist.sh`` executable with: ``$chmod +x ./assist.sh``
 
-* Run ``./assist.sh``. Variables will be set and ``assistant.py`` will launch.
+* Run ``./assist.sh``. Global variables will be set and ``assistant.py`` will launch.
 
-* If ``./etc/commands.json`` has changed and your system is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool 
-<http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
+* If ``./etc/commands.json`` has changed and your system is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
 
 * Say "Hello!" :) To mute, say "Be quiet" or "Silence". To unmute, say "Talk to me". 
 
 * To quit, say "Goodbye" or "Farewell."
 
-* To change assistant commands and language, edit ``etc/commands.json``. Exit and 
-relaunch ``assist.sh``.
+* To change assistant commands and language, edit ``etc/commands.json``. Exit and relaunch ``assist.sh``.
 
 
 Next Steps
