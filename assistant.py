@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
-
-# OpenAssistant 0.1
+# OpenAssistant 0.01
 # 2016 General Public License V3
-# Code by Jezra . Clayton G. Hobbs . Andrew Vavrek
+# By Andrew Vavrek, Clayton G. Hobbs, Jezra
 
 from bin import core
 
