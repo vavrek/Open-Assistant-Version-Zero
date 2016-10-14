@@ -22,11 +22,11 @@ export GSTREAMER_LIB_PATH=/usr/lib/gstreamer-1.0
 
 # Add Local Binary Directory To Path
 
-export PATH="$HOME/bin:../assist/bin:$PATH"
+export PATH="$HOME/bin:./bin:$PATH"
 
 # Make OpenAssistant Files Executable
 
-chmod -R +x ../assist/*
+chmod -R +x ./*
 
 # Launch OpenAssistant In Continuous Mode 
 # With History Of 20 Recent Commands
