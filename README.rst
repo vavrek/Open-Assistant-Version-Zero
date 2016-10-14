@@ -37,7 +37,7 @@ Useful Tools
 Running OpenAssistant
 ---------------------
 
-* Download and unpack the latest OpenAssistant tar.gz package.
+* Download and unpack the latest ``openassistant-master.zip`` package.
 
 * Edit ``assist.sh`` to configure the desired variables, then save.
 
