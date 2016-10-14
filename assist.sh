@@ -8,8 +8,8 @@
 
 # OpenAssistant Global Variables
 
-export ASSISTNAME="stella"
-export USERNAME="andrew"
+export ASSISTNAME="assistant"
+export USERNAME="my friend"
 export VOICE="/usr/bin/festival --tts"
 export BROWSER="firefox"
 export CONFIGDIR="./etc"
