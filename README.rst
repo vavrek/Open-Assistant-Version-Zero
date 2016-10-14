@@ -45,8 +45,7 @@ Running OpenAssistant
 
 * Run ``./assist.sh``. Variables will be set and ``assistant.py`` will launch.
 
-* If ``./etc/commands.json`` has changed and your system is online, a new dictionary
- and language model will be created via the `Sphinx Knowledge Base Tool 
+* If ``./etc/commands.json`` has changed and your system is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool 
 <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
 
 * Say "Hello!" :) To mute, say "Be quiet" or "Silence". To unmute, say "Talk to me". 
@@ -84,4 +83,4 @@ Next Steps
 Join Us
 -------
 
-Join our development working group at: `http://www.openassistant.org <http://www.openassistant.org/>`
+Join our development working group at: `openassistant.org <http://www.openassistant.org/>`
