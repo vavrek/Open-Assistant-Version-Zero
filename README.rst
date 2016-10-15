@@ -19,7 +19,7 @@ Dependencies
 * `PocketSphinx 5PreAlpha <https://github.com/cmusphinx/pocketsphinx>`__
 * `GStreamer-1.0 <https://github.com/GStreamer/gstreamer>`__
 * `GStreamer-1.0 Base Plugins <https://github.com/GStreamer/gst-plugins-base>`__
-* `Python-GObject <https://pypi.python.org/pypi/PyGObject>`__
+* `Python-GObject <https://wiki.gnome.org/action/show/Projects/PyGObject>`__
 * `Python-Requests <https://pypi.python.org/pypi/requests>`__
 
 
