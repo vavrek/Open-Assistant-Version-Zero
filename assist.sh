@@ -20,13 +20,13 @@ export TERMINAL="xfce4-terminal -x"
 
 export GSTREAMER_LIB_PATH=/usr/lib/gstreamer-1.0
 
-# Add Local Binary Directory To Path
+# Make Binary Files Executable
 
-export PATH="$HOME/bin:./bin:$PATH"
+chmod -R +x ./bin/*
 
-# Make OpenAssistant Files Executable
+# Make Configuration Files Writable
 
-chmod -R +x ./*
+chmod -R +w ./etc/*
 
 # Launch OpenAssistant In Continuous Mode 
 # With History Of 20 Recent Commands
