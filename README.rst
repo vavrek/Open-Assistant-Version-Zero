@@ -15,6 +15,7 @@ done by `Jonathan Kulp <http://jonathankulp.org/>`__.
 Dependencies
 ------------
 
+* `Linux (Built with Arch Linux, May run on Ubuntu)`
 * `Python 3.5 <https://www.python.org/downloads>`__
 * `PocketSphinx 5PreAlpha <https://github.com/cmusphinx/pocketsphinx>`__
 * `GStreamer-1.0 <https://github.com/GStreamer/gstreamer>`__
