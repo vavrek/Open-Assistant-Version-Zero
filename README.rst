@@ -28,9 +28,9 @@ Useful Tools
 ------------
 
 * aplay - console audio player
-* pamixer - port audio volume control
+* pamixer - portaudio volume control
 * plaympeg - console mp3 player
-* projectm - visualizations responsive to audio changes
+* projectm - visualizations responsive to sound
 * wmctrl - window manager control. opening, closing, resize, switch windows. 
 * xdotool - command line x automation tool
 * xvkbd - virtual keyboard for x
