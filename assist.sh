@@ -24,9 +24,9 @@ export GSTREAMER_LIB_PATH=/usr/lib/gstreamer-1.0
 
 chmod -R +x ./bin/*
 
-# Make Configuration Files Writable
+# Make Configuration Files Writable & Executable
 
-chmod -R +w ./etc/*
+chmod -R +wx ./etc/*
 
 # Launch OpenAssistant In Continuous Mode 
 # With History Of 20 Recent Commands
