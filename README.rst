@@ -38,21 +38,25 @@ Useful Tools
 Running OpenAssistant
 ---------------------
 
+* Install dependencies and tools.
+
 * Download and unpack the latest ``openassistant-master.zip`` package.
 
-* Edit ``assist.sh`` to configure the desired variables, then save.
+* Edit ``assist.sh`` to configure desired variables, then save.
 
 * Make ``assist.sh`` executable with: ``$chmod +x ./assist.sh``
 
 * Run ``./assist.sh``. Global variables will be set and ``assistant.py`` will launch.
 
-* If ``./etc/commands.json`` has changed and your system is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
+* If ``./etc/commands.json`` has changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
 
 * Say "Hello!" :) To mute, say "Be quiet" or "Silence". To unmute, say "Talk to me". 
 
 * To quit, say "Goodbye" or "Farewell."
 
 * To change assistant commands and language, edit ``./etc/commands.json``. Exit and relaunch ``assist.sh``.
+
+* For help, request support in the `OpenAssistant Forum <http://openassistant.org/community/>`_
 
 
 Next Steps
@@ -62,7 +66,7 @@ Next Steps
 
 * Enable dynamic voice and instant name changes via spoken commands
 
-* Configure assistant syntax and actions via spoken commands
+* Configure syntax and actions via spoken commands
 
 * Install internal language model translation
 
