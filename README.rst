@@ -56,7 +56,7 @@ Running OpenAssistant
 
 * To change assistant commands and language, edit ``./etc/commands.json``. Exit and relaunch ``assist.sh``.
 
-* For help, request support in the `OpenAssistant Forum <http://openassistant.org/community/>`_
+* For help, you can receive support in the `OpenAssistant Forum <http://openassistant.org/community/>`_.
 
 
 Next Steps
