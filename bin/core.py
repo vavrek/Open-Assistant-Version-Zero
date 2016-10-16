@@ -1,6 +1,6 @@
-# OpenAssistant 0.01
+# OpenAssistant 0.02
 # 2016 General Public License V3
-# By Andrew Vavrek, Clayton G. Hobbs, Jezra
+# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 
 # core.py - System Core
 
@@ -108,7 +108,7 @@ class Assistant:
 
     def run_command(self, cmd):
         """PRINT COMMAND AND RUN"""
-        print(cmd)
+        print("\x1b[32m< ! >\x1b[0m", cmd)
         self.recognizer.pause()
         subprocess.call(cmd, shell=True)
         self.recognizer.listen()

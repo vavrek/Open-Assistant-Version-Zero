@@ -1,9 +1,15 @@
 #!/bin/bash
 
+# OpenAssistant 0.02
+# 2016 General Public License V3
+# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
+
+# Shuffle Script By Jonathan Kulp . http://jonathankulp.org
+
 # good.sh
 
-good=$CONFIGDIR/good.txt
-name=$CONFIGDIR/name.txt
+good=$CONFIGDIR/good
+name=$CONFIGDIR/name
 
 shuf -n1 > $good <<EOFgood
 awesome

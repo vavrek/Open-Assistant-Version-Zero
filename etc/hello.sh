@@ -1,40 +1,36 @@
 #!/bin/bash
 
-# hello.sh
+# OpenAssistant 0.02
+# 2016 General Public License V3
+# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 
-greeting=$CONFIGDIR/greeting.txt
-name=$CONFIGDIR/name.txt
-question=$CONFIGDIR/question.txt
+# Shuffle Script By Jonathan Kulp . http://jonathankulp.org
+
+# hello.sh 
+
+greeting=$CONFIGDIR/greeting
+name=$CONFIGDIR/name
+question=$CONFIGDIR/question
 
 shuf -n1 > $greeting <<EOFgreeting
-cheers 
 greetings 
 hello 
 hello again 
 hello there 
 hey 
 hey there 
-hi 
-hi again 
 hi there 
-yes
 EOFgreeting
 
 shuf -n1 > $name <<EOFname
 $USERNAME... 
-...
 EOFname
 
 shuf -n1 > $question <<EOFquestion
 how are you?
-how can i help you?
 how's it going?
 how are things?
 how are you feeling?
-how can i help you?
-what would you like to do?
-what's going on?
- 
 EOFquestion
 
 response=$(echo "$(cat $greeting) $(cat $name) $(cat $question)")

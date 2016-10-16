@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-# OpenAssistant 0.01
+# OpenAssistant 0.02
 # 2016 General Public License V3
-# By Andrew Vavrek, Clayton G. Hobbs, Jezra
+# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 
-# Credits To Kendy Hikaru And Kendy Hikaru
+# Internet Connection Test By Kendy Hikaru And Kendy Hikaru
 
-# nettest.py - Net Connection Test
+# nettest.py - Internet Connection Test
 
 import time
 import urllib.request, urllib.parse, urllib.error
@@ -22,4 +22,7 @@ def is_connected():
   except urllib.error.URLError as e: pass
   return False
 
-print((str(is_connected())))
+if is_connected():
+  print("internet access is currently available")
+else:
+  print("we are offline")

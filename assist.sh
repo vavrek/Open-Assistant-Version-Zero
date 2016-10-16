@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# OpenAssistant 0.01
+# OpenAssistant 0.02
 # 2016 General Public License V3
-# By Andrew Vavrek, Clayton G. Hobbs, Jezra
+# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 
-# assist.sh - Launch Script
+# assist.sh - Assistant Launch Script
 
-# OpenAssistant Global Variables
+# Global Variables
 
 export ASSISTNAME="assistant"
 export USERNAME="my friend"
@@ -24,17 +24,17 @@ export GSTREAMER_LIB_PATH=/usr/lib/gstreamer-1.0
 
 chmod -R +x ./bin/*
 
-# Make Configuration Files Writable
+# Make Configuration Files Writable & Executable
 
-chmod -R +w ./etc/*
+chmod -R +wx ./etc/*
 
 # Launch OpenAssistant In Continuous Mode 
 # With History Of 20 Recent Commands
 
 python3.5 assistant.py -c -H 20
 
-# Launch Gui (buggy): use "./assistant.py -i G"
-# Launch In 'continuous' Listen Mode: add "-C"
+# Launch Gui (Buggy): use "./assistant.py -i G"
+# Launch In 'Continuous' Listen Mode: add "-C"
 # Use Mic Other Than System Default: add "-m <device Number>"
 # Find Mic Device Number: "cat /proc/asound/cards" Or "arecord -l"
 # Pass Each Word As A Separate Argument: add "-p"

@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# thanks.sh
+# OpenAssistant 0.02
+# 2016 General Public License V3
+# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
+
+# Shuffle Script By Jonathan Kulp . http://jonathankulp.org
+
+# thanks.sh 
 
 thanks=$CONFIGDIR/thanks
 name=$CONFIGDIR/name
