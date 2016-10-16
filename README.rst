@@ -1,7 +1,7 @@
 OpenAssistant
 =============
 
-OpenAssistant is an evolving open source artificial intelligence system able 
+OpenAssistant is an evolving open source artificial intelligence agent able 
 to interact in basic conversation and automate an increasing number of tasks.
 
 Maintained by the `OpenAssistant <http://www.openassistant.org/>`__ 
