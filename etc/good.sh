@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# OpenAssistant 0.02
+# OpenAssistant 0.03
 # 2016 General Public License V3
 # By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 
@@ -10,8 +10,8 @@
 
 VOICE="/usr/bin/festival --tts"
 
-good=./good
-name=./name
+good=$CONFIGDIR/good
+name=$CONFIGDIR/name
 
 shuf -n1 > $good <<EOFgood
 awesome

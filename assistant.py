@@ -1,4 +1,4 @@
-# OpenAssistant 0.01
+# OpenAssistant 0.03
 # 2016 General Public License V3
 # By Andrew Vavrek, Clayton G. Hobbs, Jezra
 

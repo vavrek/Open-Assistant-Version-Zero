@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# OpenAssistant 0.02
+# OpenAssistant 0.03
 # 2016 General Public License V3
 # By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 
@@ -10,9 +10,9 @@
 
 export VOICE="/usr/bin/festival --tts"
 
-greeting=./greeting
-name=./name
-question=./question
+greeting=$CONFIGDIR/greeting
+name=$CONFIGDIR/name
+question=$CONFIGDIR/question
 
 shuf -n1 > $greeting <<EOFgreeting
 greetings 
