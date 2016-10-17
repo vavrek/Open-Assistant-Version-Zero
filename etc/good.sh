@@ -8,8 +8,10 @@
 
 # good.sh
 
-good=$CONFIGDIR/good
-name=$CONFIGDIR/name
+VOICE="/usr/bin/festival --tts"
+
+good=./good
+name=./name
 
 shuf -n1 > $good <<EOFgood
 awesome

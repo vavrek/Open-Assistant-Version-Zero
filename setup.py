@@ -1,4 +1,4 @@
-# OpenAssistant 0.02
+# OpenAssistant 0.03
 # 2016 General Public License V3
 # By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 
@@ -11,7 +11,7 @@ with open("README.rst") as file:
 
 setup(
     name = "OpenAssistant",
-    version = "0.01",
+    version = "0.03",
     author = "Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp",
     author_email = "info@openassistant.org",
     description = ("Open Source AI Systems"),

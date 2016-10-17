@@ -8,9 +8,11 @@
 
 # hello.sh 
 
-greeting=$CONFIGDIR/greeting
-name=$CONFIGDIR/name
-question=$CONFIGDIR/question
+export VOICE="/usr/bin/festival --tts"
+
+greeting=./greeting
+name=./name
+question=./question
 
 shuf -n1 > $greeting <<EOFgreeting
 greetings 

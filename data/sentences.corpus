@@ -1,10 +1,13 @@
-add numbers  plus 
+absolutely
+absolutely not
+affirmative
 ah dammit
 ah damn
 ah great
 ah shit
 all right
 all right assistant
+allright
 am fine
 am tired
 amazing
@@ -19,14 +22,19 @@ are you?
 assist
 assistant
 assistant shut up
+assistant speak
+assistant talk to me
 awesome
 awesome dude
 awesome job
 awesome sauce
 awesome work
-back window
+back flip
 be quiet
+be silent
 broken record
+calculate  plus 
+calculate  times 
 can you help me?
 can you help?
 check email
@@ -55,13 +63,19 @@ do you think?
 doing fairly well
 doing good
 doing great
+doing ok
 doing pretty good
 doing well
 don't you think?
 don't you understand?
+down
 dude
 echo username
+end
 enough
+enough talking
+enter
+escape
 everything
 everything is alot
 everything is fantastic
@@ -74,12 +88,14 @@ farewell assistant
 feel me?
 feeling good
 feeling great
+feeling sad
 feeling tired
 feeling wonderful
 finally
 fine
 for sure?
 for what?
+forget it
 freak out
 full screen
 funny
@@ -88,6 +104,7 @@ get me a beer
 go away
 go to terminal
 go to the web
+going
 good
 good job
 good morning
@@ -106,11 +123,13 @@ greetings assistant
 groovy
 had enough?
 have you had enough?
+hell no
 hello
 hello assistant
 hello how are things?
 hello how are you?
 hello machine
+hello stella
 hello there
 hey
 hey assistant
@@ -120,7 +139,9 @@ hey you
 hi
 hi assistant
 hi how are you?
+hi stella
 hilarious
+home
 how
 how are things?
 how are you doing?
@@ -141,6 +162,8 @@ i am doing ok
 i am doing pretty good
 i am doing pretty well
 i am doing well
+i am feeling ok
+i am feeling sad
 i am fine
 i am getting tired
 i am good
@@ -149,6 +172,7 @@ i am ok
 i am only typing
 i am pissed
 i am ready for bed
+i am sad
 i am sorry
 i am talking
 i am talking to you
@@ -203,6 +227,7 @@ like
 like everything
 like learning to speak?
 like what?
+list
 list block devices
 list modules
 list network devices
@@ -218,7 +243,7 @@ minimize window
 morning
 morning assistant
 most righteous
-my name is bob
+never
 nevermind
 new tab
 next tab
@@ -227,6 +252,11 @@ nice job
 nice work
 nicely done
 no
+no thank you
+no thanks
+no that's alright
+no that's ok
+no way
 not much
 nothing
 nothing is the matter
@@ -240,6 +270,7 @@ ok fine
 open arch wiki
 open commands
 open facebook
+open firefox
 open project em
 open status
 open tab
@@ -257,6 +288,7 @@ play me a song
 please
 please assistant
 please be quiet
+please be silent
 please listen
 pretty good
 previous tab
@@ -271,6 +303,7 @@ reboot machine
 record
 red alert
 red pill
+reset
 rewind
 right
 right on
@@ -280,6 +313,7 @@ save document
 save file
 say something
 say something random
+say topic
 search
 search web
 see ree
@@ -287,6 +321,7 @@ show status
 shut up
 shut up assistant
 silence
+silent
 sing a song
 sing for me
 sing me a song
@@ -295,6 +330,7 @@ sorry
 sounds good
 start a  minute timer
 start x
+stella
 stop
 stop it
 stop music
@@ -335,12 +371,14 @@ things are good
 things are screwed up
 things suck
 time
+time is it?
 tired
 totally
 true
 true that
 try harder
 tyrell corporation
+up
 very cool
 very funny
 very good
@@ -358,6 +396,7 @@ what are you not sure about?
 what are you?
 what can you do?
 what can you say?
+what day is it today?
 what day is it?
 what do you care about?
 what do you like learning about?
@@ -374,8 +413,11 @@ what happened?
 what is going on?
 what is happening?
 what is my name?
+what is the day today?
 what is the time?
+what is the topic
 what is the weather today?
+what is the weather?
 what is your name?
 what it be like?
 what time
@@ -387,6 +429,8 @@ what would you like?
 what's actually going on?
 what's going on?
 what's happening?
+what's the time?
+what's the weather?
 what's up with you?
 what's up?
 where are we going?
@@ -418,21 +462,27 @@ you are doing great
 you are doing great assistant
 you are getting smart
 you are getting smarter
+you are good
 you are great
 you are here
 you are incredible
 you are learning to speak
+you are optimistic
 you are right
 you are smart
 you are so smart
 you are there
+you are very good
+you are very positive
 you are welcome
 you are welcome assistant
 you are wonderful
 you are working
+you are working better
 you are working good
 you are wrong
 you assistant
+you doing good
 you don't know
 you don't understand
 you good
@@ -447,10 +497,12 @@ you like to talk
 you right
 you said that
 you sound good
+you suck
 you there?
 you think
 you think so
 you understand?
+you very good
 you work
 your voice could be better
 zero eight five four nine one seven six three two eighteen eleven fifteen fourteen ninteen seventeen sixteen ten thirteen twelve eighty fifty forty ninty seventy sixty thirty twenty hundred billion million thousand and 

@@ -8,7 +8,7 @@
 
 # Global Variables
 
-export ASSISTNAME="assistant"
+export ASSISTNAME="stella"
 export USERNAME="my friend"
 export VOICE="/usr/bin/festival --tts"
 export BROWSER="firefox"
