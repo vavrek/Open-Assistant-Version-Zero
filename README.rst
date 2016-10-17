@@ -1,7 +1,7 @@
 OpenAssistant
 =============
 
-OpenAssistant is an evolving open source artificial intelligence system able 
+OpenAssistant is an evolving open source artificial intelligence agent able 
 to interact in basic conversation and automate an increasing number of tasks.
 
 Maintained by the `OpenAssistant <http://www.openassistant.org/>`__ 
@@ -15,7 +15,7 @@ done by `Jonathan Kulp <http://jonathankulp.org/>`__.
 Dependencies
 ------------
 
-* `Arch Linux <https://www.archlinux.org/>`_ (Testing Soon on `Ubuntu Linux <https://www.ubuntu.com/>`__ and `macOS <https://www.apple.com/macos>`_)
+* `Arch Linux <https://www.archlinux.org/>`_ or `Ubuntu Linux <http://openassistant.org/forum/support/ubuntu-16-04-installation/>`_ (Testing Soon on `macOS <https://www.apple.com/macos>`_)
 * `Python 3.5 <https://www.python.org/downloads>`__
 * `PocketSphinx 5PreAlpha <https://github.com/cmusphinx/pocketsphinx>`__
 * `GStreamer-1.0 <https://github.com/GStreamer/gstreamer>`__
