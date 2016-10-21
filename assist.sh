@@ -30,7 +30,7 @@ chmod -R +wx ./etc/*
 
 # Replace All Instances of 'ASSISTNAME' In Command File
 
-sed -i -e 's/$ASSISTNAME/stella/g' $CONFIGDIR/commands.json
+# sed -i -e 's/$ASSISTNAME/stella/g' $CONFIGDIR/commands.json
 
 # Launch OpenAssistant In Continuous Mode
 # With History Of 20 Recent Commands
