@@ -9,7 +9,7 @@
 # Global Variables
 
 export ASSISTNAME="stella"
-export USERNAME="my friend"
+export USERNAME="andrew"
 export VOICE="/usr/bin/festival --tts"
 export BROWSER="firefox"
 export CONFIGDIR="./etc"
@@ -28,7 +28,11 @@ chmod -R +x ./bin/*
 
 chmod -R +wx ./etc/*
 
-# Launch OpenAssistant In Continuous Mode 
+# Replace All Instances of 'ASSISTNAME' In Command File
+
+sed -i -e 's/$ASSISTNAME/stella/g' $CONFIGDIR/commands.json
+
+# Launch OpenAssistant In Continuous Mode
 # With History Of 20 Recent Commands
 
 python3.5 assistant.py -c -H 20

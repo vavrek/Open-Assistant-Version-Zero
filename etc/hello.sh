@@ -8,24 +8,22 @@
 
 # hello.sh 
 
-export VOICE="/usr/bin/festival --tts"
-
 greeting=$CONFIGDIR/greeting
 name=$CONFIGDIR/name
 question=$CONFIGDIR/question
 
 shuf -n1 > $greeting <<EOFgreeting
-greetings 
-hello 
-hello again 
-hello there 
-hey 
-hey there 
-hi there 
+greetings
+hello
+hello again
+hello there
+hey
+hey there
+hi there
 EOFgreeting
 
 shuf -n1 > $name <<EOFname
-$USERNAME... 
+$USERNAME...
 EOFname
 
 shuf -n1 > $question <<EOFquestion

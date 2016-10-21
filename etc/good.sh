@@ -8,30 +8,20 @@
 
 # good.sh
 
-VOICE="/usr/bin/festival --tts"
-
 good=$CONFIGDIR/good
-name=$CONFIGDIR/name
 
 shuf -n1 > $good <<EOFgood
 awesome
 cool
-excellent 
-fantastic 
-good 
-great 
+excellent
+fantastic
+good
+great
 lovely
 nice
 wonderful
 EOFgood
 
-shuf -n1 > $name <<EOFname
-$USERNAME... 
- 
-EOFname
-
-response=$(echo "$(cat $good) $(cat $name)")
-
-echo $response | $VOICE
+echo "$(cat $good)" | $VOICE
 
 # rm $good $name
