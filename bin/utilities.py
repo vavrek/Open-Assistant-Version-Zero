@@ -31,6 +31,7 @@ class Config:
     conf_dir = os.environ['CONFIGDIR']
     cache_dir = os.environ['CACHEDIR']
     data_dir = os.environ['DATADIR']
+    img_dir = os.environ['IMGDIR']
 
     # CONFIGURATION FILES
     opt_file = os.path.join(conf_dir, "commands.json")
