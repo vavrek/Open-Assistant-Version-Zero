@@ -28,9 +28,9 @@ class Config:
     program_name = "assist"
 
     # DIRECTORIES
-    conf_dir = os.path.join("./etc")
-    cache_dir = os.path.join("./cache")
-    data_dir = os.path.join("./data")
+    conf_dir = os.environ['CONFIGDIR']
+    cache_dir = os.environ['CACHEDIR']
+    data_dir = os.environ['DATADIR']
 
     # CONFIGURATION FILES
     opt_file = os.path.join(conf_dir, "commands.json")
