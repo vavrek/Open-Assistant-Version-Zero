@@ -286,6 +286,7 @@ ok stella
 open commands
 open crux wiki
 open firefox
+open office
 open project em
 open reddit
 open status
@@ -335,8 +336,8 @@ run diagnostics
 sad
 save document
 save file
-say sAomething random
 say something
+say something random
 say topic
 scroll down
 scroll up
@@ -380,6 +381,7 @@ tell me a story
 tell me about you
 tell me your name
 terminal
+terminal 
 terrible
 test internet connection
 test internet speed
