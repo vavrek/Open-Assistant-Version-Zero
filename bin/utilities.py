@@ -28,9 +28,9 @@ class Config:
     program_name = "assist"
 
     # DIRECTORIES
-    conf_dir = os.path.join("./etc")
-    cache_dir = os.path.join("./cache")
-    data_dir = os.path.join("./data")
+    conf_dir = os.environ['CONFIGDIR']
+    cache_dir = os.environ['CACHEDIR']
+    data_dir = os.environ['DATADIR']
 
     # CONFIGURATION FILES
     opt_file = os.path.join(conf_dir, "commands.json")
@@ -192,6 +192,9 @@ class LanguageUpdater:
         path_re = r'.*<title>Index of (.*?)</title>.*'
         number_re = r'.*TAR([0-9]*?)\.tgz.*'
         for line in response_text.split('\n'):
+            # ERROR RESPONSE
+            if "[_ERRO_]" in line:
+                return 1
             # IF WE FOUND THE DIRECTORY, KEEP IT AND DON'T BREAK
             if re.search(path_re, line):
                 path = host + re.sub(path_re, r'\1', line)

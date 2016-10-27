@@ -47,6 +47,7 @@ close project m
 close status
 close tab
 close terminal
+close terminal 
 close web
 close window
 come on
@@ -97,6 +98,7 @@ finally
 find
 fine
 fine stella
+flip stack
 for sure?
 for what?
 forget it
@@ -106,7 +108,8 @@ funny
 gee thanks
 get me a beer
 go away
-go to terminal
+go to tag 
+go to terminal 
 go to the web
 going
 good
@@ -256,6 +259,7 @@ never
 nevermind
 new tab
 next tab
+next terminal
 nice
 nice job
 nice work
@@ -279,12 +283,11 @@ oh stella
 ok
 ok fine
 ok stella
-open arch wiki
 open commands
-open commands file
-open facebook
+open crux wiki
 open firefox
 open project em
+open reddit
 open status
 open tab
 open terminal
@@ -305,12 +308,14 @@ please listen
 please stella
 pretty good
 previous tab
+previous terminal
 quit
 quit status
 quit the web
 quit thunderbird
 quit web
 read me a story
+read technology news
 read world news
 really
 reboot machine
@@ -367,8 +372,10 @@ sure
 sure is
 suspend machine
 system status
+tag 
 talk dirty
 talk to me
+technology news
 tell me a story
 tell me about you
 tell me your name
