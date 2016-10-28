@@ -47,13 +47,11 @@ class Assistant:
             self.ui = UI(self.options, self.options['continuous'])
             self.ui.connect("command", self.process_command)
             # Able To Load Icon?
-            icon = self.load_resource("icon_small.png")
-            if icon:
-                self.ui.set_icon_active_asset(icon)
+            icon = self.config.img_dir + "/icon_small.png"
+            self.ui.set_icon_active_asset(icon)
             # Able To Load Inactive Icon?
-            icon_inactive = self.load_resource("icon_inactive_small.png")
-            if icon_inactive:
-                self.ui.set_icon_inactive_asset(icon_inactive)
+            icon_inactive = self.config.img_dir + "/icon_inactive_small.png"
+            self.ui.set_icon_inactive_asset(icon_inactive)
 
         if self.options['history']:
             self.history = []
