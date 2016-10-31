@@ -13,7 +13,7 @@ case $TOPIC in
   echo "ok... yes..." | $VOICE
   ;;
 "diagnostics")
-  $CONFIGDIR/diagnostics.sh
+  $BINDIR/diagnostics.sh
   ;;
 "jokes")
  echo "ok... here is a joke... why did the chicken cross the road..." | $VOICE
