@@ -11,20 +11,20 @@ export ASSISTNAME=$(hostname)
 export USERNAME=$(whoami)
 export VOICE="/usr/bin/festival --tts"
 export BROWSER="firefox"
-export CONFIGDIR="/var/lib/openassistant/etc"
-export DATADIR="/var/lib/openassistant/data"
-export CACHEDIR="/var/lib/openassistant/cache"
-export BINDIR="/usr/share/openassistant/bin"
-export AUDIODIR="/usr/share/openassistant/audio"
-export DOCDIR="/usr/share/openassistant/docs"
-export IMGDIR="/usr/share/openassistant/img"
-#export CONFIGDIR="./etc"
-#export DATADIR="./data"
-#export CACHEDIR="./cache"
-#export BINDIR="./bin"
-#export AUDIODIR="./audio"
-#export DOCDIR="./doc"
-#export IMGDIR="./img"
+#export CONFIGDIR="/var/lib/openassistant/etc"
+#export DATADIR="/var/lib/openassistant/data"
+#export CACHEDIR="/var/lib/openassistant/cache"
+#export BINDIR="/usr/share/openassistant/bin"
+#export AUDIODIR="/usr/share/openassistant/audio"
+#export DOCDIR="/usr/share/openassistant/docs"
+#export IMGDIR="/usr/share/openassistant/img"
+export CONFIGDIR="./etc"
+export DATADIR="./data"
+export CACHEDIR="./cache"
+export BINDIR="./bin"
+export AUDIODIR="./audio"
+export DOCDIR="./doc"
+export IMGDIR="./img"
 export KEYPRESS="xvkbd -xsendevent -secure -text"
 # Stay on new window even if command end
 #tmux set-option -g remain-on-exit on
@@ -43,8 +43,9 @@ export GSTREAMER_LIB_PATH=/usr/lib/gstreamer-1.0
 # Launch OpenAssistant In Continuous Mode
 # With History Of 20 Recent Commands
 
-python3.5 /usr/share/openassistant/assistant.py -c -H 20
-#python3.5 assistant.py -c -H 20
+#python3.5 /usr/share/openassistant/assistant.py -c -H 20
+
+python3.5 assistant.py -c -H 20
 
 # Launch Gui (Buggy): use "./assistant.py -i G"
 # Launch In 'Continuous' Listen Mode: add "-C"
