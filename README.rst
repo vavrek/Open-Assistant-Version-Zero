@@ -1,10 +1,10 @@
-OpenAssistant
+Open Assistant
 =============
 
-OpenAssistant is an evolving open source artificial intelligence agent able 
+Open Assistant is an evolving open source artificial intelligence agent able 
 to interact in basic conversation and automate an increasing number of tasks.
 
-Maintained by the `OpenAssistant <http://www.openassistant.org/>`__ 
+Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
 working group lead by `Andrew Vavrek <http://www.vavrek.com/>`__, this software 
 is an extension of `Blather <https://gitlab.com/jezra/blather>`__ 
 by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee>`__ 
@@ -62,7 +62,7 @@ Running OpenAssistant
 Next Steps
 ----------
 
-* Port OpenAssistant to multiple Linux distributions, beginning with Ubuntu
+* Port Open Assistant to multiple Linux distributions, beginning with Ubuntu
 
 * Enable dynamic voice and instant name changes via spoken commands
 
@@ -78,7 +78,7 @@ Next Steps
 
 * Establish multiple default 'personalities' and plug-in functions
 
-* Port OpenAssistant to all operating systems and devices
+* Port Open Assistant to all operating systems and devices
 
 * Galactic Exploration!
 
@@ -89,8 +89,8 @@ Join Us!
 Join our development working group at: http://www.openassistant.org
 
 
-OpenAssistant Fork
+Open Assistant Fork
 ==================
 
-OpenAssistant fork for crux system, for more information read;
+Open Assistant fork for crux system, for more information read;
 https://github.com/s1lvino/c9-ports/tree/master/openassistant
