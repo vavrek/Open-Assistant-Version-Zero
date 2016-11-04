@@ -47,6 +47,7 @@ close project m
 close status
 close tab
 close terminal
+close terminal 
 close web
 close window
 come on
@@ -99,6 +100,7 @@ finally
 find
 fine
 fine stella
+flip stack
 for sure?
 for what?
 forget it
@@ -108,9 +110,14 @@ funny
 gee thanks
 get me a beer
 go away
+<<<<<<< HEAD
 go fish
 go to firefox
 go to terminal
+=======
+go to tag 
+go to terminal 
+>>>>>>> 9e53b3b715ead082b44d80f0fe55686848f05f24
 go to the web
 going
 good
@@ -267,6 +274,7 @@ never
 nevermind
 new tab
 next tab
+next terminal
 nice
 nice job
 nice work
@@ -290,13 +298,17 @@ oh stella
 ok
 ok fine
 ok stella
+<<<<<<< HEAD
 open arch wiki
 open assistant forum
+=======
+>>>>>>> 9e53b3b715ead082b44d80f0fe55686848f05f24
 open commands
-open commands file
-open facebook
+open crux wiki
 open firefox
+open office
 open project em
+open reddit
 open status
 open tab
 open terminal
@@ -317,6 +329,7 @@ please listen
 please stella
 pretty good
 previous tab
+previous terminal
 quit
 quit status
 quit the web
@@ -324,7 +337,10 @@ quit thunderbird
 quit web
 read future news
 read me a story
+<<<<<<< HEAD
 read news
+=======
+>>>>>>> 9e53b3b715ead082b44d80f0fe55686848f05f24
 read technology news
 read world news
 really
@@ -345,8 +361,8 @@ run diagnostics
 sad
 save document
 save file
-say sAomething random
 say something
+say something random
 say topic
 scroll down
 scroll up
@@ -384,15 +400,20 @@ suspend machine
 switch to firefox
 switch to terminal
 system status
+tag 
 talk dirty
 talk some corporate bullshit
 talk to me
 technology news
+<<<<<<< HEAD
 tell me a joke
+=======
+>>>>>>> 9e53b3b715ead082b44d80f0fe55686848f05f24
 tell me a story
 tell me about you
 tell me your name
 terminal
+terminal 
 terrible
 test internet connection
 test internet speed

@@ -13,7 +13,7 @@ case $TOPIC in
   echo "ok..." | $VOICE
   ;;
 "diagnostics")
-  $CONFIGDIR/diagnostics.sh
+  $BINDIR/diagnostics.sh
   ;;
 "jokes")
  shuf -n 1 ./docs/jokes.txt | tee /dev/tty | $VOICE
