@@ -49,8 +49,7 @@ export GSTREAMER_LIB_PATH=/usr/lib/gstreamer-1.0
 
 #python3.5 /usr/share/openassistant/assistant.py -c -H 20
 
-python3.5 assistant.py -c -H 20
-
+python3.5 assistant.py -c -H 20 -m 0
 
 # Launch Gui (Buggy): use "./assistant.py -i G"
 # Launch In 'Continuous' Listen Mode: add "-C"
