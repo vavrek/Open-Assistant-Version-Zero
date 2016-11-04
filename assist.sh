@@ -35,7 +35,7 @@ chmod -R +wx ./etc/*
 # Launch OpenAssistant In Continuous Mode
 # With History Of 20 Recent Commands
 
-python3.5 assistant.py -c -H 20
+python3.5 assistant.py -c -H 20 -m 0
 
 # Launch Gui (Buggy): use "./assistant.py -i G"
 # Launch In 'Continuous' Listen Mode: add "-C"

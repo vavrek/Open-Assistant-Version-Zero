@@ -10,17 +10,13 @@ TOPIC=$(echo $(cat $CONFIGDIR/topic))
 
 case $TOPIC in
 "none")
-  echo "ok... yes..." | $VOICE
+  echo "ok..." | $VOICE
   ;;
 "diagnostics")
   $CONFIGDIR/diagnostics.sh
   ;;
 "jokes")
- echo "ok... here is a joke... why did the chicken cross the road..." | $VOICE
- echo "roll around in the dirt..."  | $VOICE
- echo "and then cross back over again..." | $VOICE
- sleep 1
- echo "because this chicken was a dirty double crosser..." | $VOICE
+ shuf -n 1 ./docs/jokes.txt | tee /dev/tty | $VOICE
  echo "none" > $CONFIGDIR/topic
   ;;
 esac

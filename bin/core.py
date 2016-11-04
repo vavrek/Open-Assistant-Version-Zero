@@ -74,7 +74,7 @@ class Assistant:
         hasher = self.hasher.get_hash_object()
         for voice_cmd in self.commands.keys():
             hasher.update(voice_cmd.encode('utf-8'))
-            # Add A Separator To Avoid Odd BehaviorA
+            # Add A Separator To Avoid Odd Behavior
             hasher.update('\n'.encode('utf-8'))
         new_hash = hasher.hexdigest()
 

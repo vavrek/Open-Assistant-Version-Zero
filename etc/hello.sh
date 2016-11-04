@@ -6,7 +6,7 @@
 
 # Shuffle Script By Jonathan Kulp . http://jonathankulp.org
 
-# hello.sh 
+# hello.sh
 
 greeting=$CONFIGDIR/greeting
 name=$CONFIGDIR/name

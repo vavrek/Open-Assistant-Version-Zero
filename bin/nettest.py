@@ -23,6 +23,6 @@ def is_connected():
   return False
 
 if is_connected():
-  print("internet access is currently available")
+  print("Internet access is currently available.")
 else:
-  print("we are offline")
+  print("We are offline.")
