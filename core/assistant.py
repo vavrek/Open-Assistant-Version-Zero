@@ -4,20 +4,18 @@
 
 # core.py - System Core
 
+import os
 import sys
-import signal
-import os.path
 import subprocess
-from gi.repository import GObject, GLib
 
-from bin.recognizer import Recognizer
-from bin.utilities import *
-from bin.numbers import NumberParser
+from .recognizer import Recognizer
+from .utilities import Config, Hasher, LanguageUpdater
+from .numbers import NumberParser
+
 
 class Assistant:
 
     def __init__(self):
-        self.ui = None
         self.options = {}
         self.continuous_listen = False
 
@@ -34,27 +32,8 @@ class Assistant:
 
         # Create Strings File
         self.update_voice_commands_if_changed()
-
-        if self.options['interface']:
-            if self.options['interface'] == "g":
-                from bin.gui import GTKInterface as UI
-            elif self.options['interface'] == "gt":
-                from bin.gui import GTKTrayInterface as UI
-            else:
-                print("no GUI defined")
-                sys.exit()
-
-            self.ui = UI(self.options, self.options['continuous'])
-            self.ui.connect("command", self.process_command)
-            # Able To Load Icon?
-            icon = self.load_resource("icon_small.png")
-            if icon:
-                self.ui.set_icon_active_asset(icon)
-            # Able To Load Inactive Icon?
-            icon_inactive = self.load_resource("icon_inactive_small.png")
-            if icon_inactive:
-                self.ui.set_icon_inactive_asset(icon_inactive)
-
+        
+        # Optional: History
         if self.options['history']:
             self.history = []
 
@@ -154,24 +133,14 @@ class Assistant:
                 subprocess.call(self.options['invalid_sentence_command'],
                                 shell=True)
             print("\x1b[31m< ? >\x1b[0m {0}".format(t))
-        # If There Is A Ui And We Are Not In Continuous Listen
-        if self.ui:
-            if not self.continuous_listen:
-                # Stop Listening
-                self.recognizer.pause()
-            # Tell Ui To Finish
-            self.ui.finished(t)
 
     def run(self):
-        if self.ui:
-            self.ui.run()
-        else:
-            self.recognizer.listen()
+        self.recognizer.listen()
 
     def quit(self):
         sys.exit()
 
-    def process_command(self, UI, command):
+    def process_command(self, command):
         print(command)
         if command == "listen":
             self.recognizer.listen()
@@ -185,22 +154,3 @@ class Assistant:
             self.recognizer.pause()
         elif command == "quit":
             self.quit()
-
-
-def run():
-    # Create Core Object
-    core = Assistant()
-    # Initialize Gobject Threads
-    GObject.threads_init()
-    # Create Main Loop
-    main_loop = GObject.MainLoop()
-    # Handle Signal Interrupts
-    signal.signal(signal.SIGINT, signal.SIG_DFL)
-    # Run Core
-    core.run()
-    # Start Main Loop
-    try:
-        main_loop.run()
-    except:
-        main_loop.quit()
-        sys.exit()

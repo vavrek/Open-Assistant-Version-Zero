@@ -17,13 +17,7 @@ export KEYPRESS="xvkbd -xsendevent -secure -text"
 # tmux set-option -g remain-on-exit on
 export TERMINAL="tmux new-window "
 
-export CONFIGDIR="./etc"
-export DATADIR="./data"
-export CACHEDIR="./cache"
-export BINDIR="./bin"
-export AUDIODIR="./audio"
-export DOCDIR="./doc"
-export IMGDIR="./img"
+export OA_PERSONALITY_DIR="$PWD/personalities/default"
 
 #export CONFIGDIR="/var/lib/openassistant/etc"
 #export DATADIR="/var/lib/openassistant/data"
@@ -35,24 +29,14 @@ export IMGDIR="./img"
 
 
 # Gstreamer Library Path
-export GSTREAMER_LIB_PATH=/usr/lib/gstreamer-1.0
-
-# Make Binary Files Executable
-#chmod -R +x ./bin/*
-# Make Configuration Files Writable & Executable
-#chmod -R +wx ./etc/*
-# Replace All Instances of 'ASSISTNAME' In Command File
-#sed -i s/"stella"/"$ASSISTNAME"/g $CONFIGDIR/commands.json
 
 # Launch OpenAssistant In Continuous Mode
 # With History Of 20 Recent Commands
 
-#python3.5 /usr/share/openassistant/assistant.py -c -H 20
-
 python3.5 assistant.py -c -H 20 -m 0
 
 # Launch Gui (Buggy): use "./assistant.py -i G"
-# Launch In 'Continuous' Listen Mode: add "-C"
+# Launch In 'Continuous' Listen Mode: add "-c"
 # Use Mic Other Than System Default: add "-m <device Number>"
 # Find Mic Device Number: "cat /proc/asound/cards" Or "arecord -l"
 # Pass Each Word As A Separate Argument: add "-p"

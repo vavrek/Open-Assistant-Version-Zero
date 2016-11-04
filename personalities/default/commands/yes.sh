@@ -6,17 +6,17 @@
 
 # yes.sh
 
-TOPIC=$(echo $(cat $CONFIGDIR/topic))
+TOPIC=$(echo $(cat $OA_PERSONALITY_DIR/etc/topic))
 
 case $TOPIC in
 "none")
   echo "ok..." | $VOICE
   ;;
 "diagnostics")
-  $BINDIR/diagnostics.sh
+  $OA_PERSONALITY_DIR/commands/diagnostics.sh
   ;;
 "jokes")
- shuf -n 1 ./docs/jokes.txt | tee /dev/tty | $VOICE
- echo "none" > $CONFIGDIR/topic
+ shuf -n 1 $OA_PERSONALITY_DIR/docs/jokes.txt | tee /dev/tty | $VOICE
+ echo "none" > $OA_PERSONALITY_DIR/etc/topic
   ;;
 esac
