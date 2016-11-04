@@ -1,3 +1,0 @@
-"corporate bullshit": "curl -s http://cbsg.sourceforge.net/cgi-bin/live | grep -Eo '^<li>.*</li>' | sed s,\\</\\\\?li\\>,,g | shuf -n 1 | $VOICE",
-
-"talk some corporate bullshit": "curl -s http://cbsg.sourceforge.net/cgi-bin/live | grep -Eo '^<li>.*</li>' | sed s,\\</\\\\?li\\>,,g | shuf -n 1 | $VOICE",

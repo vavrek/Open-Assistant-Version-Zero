@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# OpenAssistant 0.03
+# OpenAssistant 0.04
 # 2016 General Public License V3
 # By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 

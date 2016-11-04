@@ -494,7 +494,7 @@
     "what is the topic": "echo the topic is $(cat $CONFIGDIR/topic) | $VOICE",
     "what is the weather today?": "echo dude... look out a window or go for a walk... you need to go outside... | $VOICE",
     "what is the time?": "saytime",
-    "what is the weather?": "echo dude... look out a window or go for a walk... you need to go outside... | $VOICE",
+    "what is the weather?": "$BINDIR/weather.py",
     "what is up?": "echo suns... moons... stars... | $VOICE",
     "what is up stella?": "echo not much... what is up with you? | $VOICE",
     "what is up with you?": "echo not much... counting electrons... | $VOICE",
