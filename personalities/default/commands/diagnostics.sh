@@ -20,6 +20,6 @@ freemem=$(free -h | grep "Mem:" | awk -F "Mem: " '{print $2}' | awk '{print $3}'
 space=$(df -h /dev/sda1 | awk '{print $4}' | grep G | cut -d "G" -f1 -) && echo "Internal hard drive has $space Gigabytes free..." | tee /dev/tty | $VOICE
 
 # Network Status
-./bin/nettest.py | tee /dev/tty | $VOICE
+$OA_PERSONALITY_DIR/commands/nettest.py | tee /dev/tty | $VOICE
 
-echo "none" > $CONFIGDIR/topic
+echo "none" > $OA_PERSONALITY_DIR/etc/topic

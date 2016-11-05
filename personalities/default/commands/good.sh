@@ -8,7 +8,7 @@
 
 # good.sh
 
-good=$CONFIGDIR/good
+good=$OA_PERSIONALITY_DIR/etc/good
 
 shuf -n1 > $good <<EOFgood
 awesome

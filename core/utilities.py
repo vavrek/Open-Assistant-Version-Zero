@@ -7,7 +7,6 @@
 import os
 import re
 import json
-import time
 import hashlib
 import urllib.request, urllib.parse, urllib.error
 
@@ -15,7 +14,6 @@ from argparse import ArgumentParser, Namespace
 
 import requests
 
-from gi.repository import GLib
 
 NET_TEST_SERVER = "http://www.speech.cs.cmu.edu"
 
@@ -28,10 +26,10 @@ class Config:
     program_name = "assist"
 
     # DIRECTORIES
-    conf_dir = os.environ['CONFIGDIR']
-    cache_dir = os.environ['CACHEDIR']
-    data_dir = os.environ['DATADIR']
-    img_dir = os.environ['IMGDIR']
+    conf_dir = os.path.join(os.environ['OA_PERSONALITY_DIR'], 'etc')
+    cache_dir = os.path.join(os.environ['OA_PERSONALITY_DIR'], 'cache')
+    data_dir = os.path.join(os.environ['OA_PERSONALITY_DIR'], 'language')
+    img_dir = os.path.join(os.environ['OA_PERSONALITY_DIR'], 'img')
 
     # CONFIGURATION FILES
     opt_file = os.path.join(conf_dir, "commands.json")
@@ -53,10 +51,6 @@ class Config:
 
         # SET UP ARGUMENT PARSER
         self._parser = ArgumentParser()
-        self._parser.add_argument("-i", "--interface", type=str,
-                dest="interface", action='store',
-                help="Interface to use (if any). 'g' for GTK or 'gt' for GTK" +
-                " system tray icon")
 
         self._parser.add_argument("-c", "--continuous",
                 action="store_true", dest="continuous", default=False,
