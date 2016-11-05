@@ -14,4 +14,4 @@ else
 	echo "ok..." | $VOICE
 fi
 
-echo "none" > $OA_PERSONALITY_DIR/etc/topic
+echo "none" > $OA_MIND_DIR/etc/topic

@@ -8,8 +8,8 @@
 
 # thanks.sh
 
-thanks=$OA_PERSONALITY_DIR/etc/thanks
-name=$OA_PERSONALITY_DIR/etc/name
+thanks=$OA_MIND_DIR/etc/thanks
+name=$OA_MIND_DIR/etc/name
 
 shuf -n1 > $thanks <<EOFthanks
 thanks

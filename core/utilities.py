@@ -22,20 +22,19 @@ class Config:
 
     """OPEN ASSISTANT CONFIGURATION"""
 
-    # PROGRAM NAME
-    program_name = "assist"
-
     # DIRECTORIES
-    conf_dir = os.path.join(os.environ['OA_PERSONALITY_DIR'], 'etc')
-    cache_dir = os.path.join(os.environ['OA_PERSONALITY_DIR'], 'cache')
-    data_dir = os.path.join(os.environ['OA_PERSONALITY_DIR'], 'language')
-    img_dir = os.path.join(os.environ['OA_PERSONALITY_DIR'], 'img')
+    mind_dir = os.environ['OA_MIND_DIR']
+    
+    conf_dir = os.path.join(mind_dir, 'etc')
+    cache_dir = os.path.join(mind_dir, 'cache')
+    data_dir = os.path.join(mind_dir, 'language')
+    img_dir = os.path.join(mind_dir, 'img')
 
     # CONFIGURATION FILES
     opt_file = os.path.join(conf_dir, "commands.json")
 
     # CACHE FILES
-    history_file = os.path.join(cache_dir, program_name + "history")
+    history_file = os.path.join(cache_dir, "history")
     hash_file = os.path.join(cache_dir, "hash.json")
 
     # DATA FILES
