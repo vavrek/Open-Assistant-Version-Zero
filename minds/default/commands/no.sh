@@ -6,7 +6,7 @@
 
 # no.sh
 
-TOPIC=$(echo $(cat $CONFIGDIR/topic))
+TOPIC=$(echo $(cat $OA_MIND_DIR/etc/topic))
 
 if [ $TOPIC = "diagnostics" ]; then
 	echo "ok... fine..." | $VOICE
