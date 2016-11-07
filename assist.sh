@@ -17,7 +17,7 @@ export KEYPRESS="xvkbd -xsendevent -secure -text"
 # tmux set-option -g remain-on-exit on
 export TERMINAL="tmux new-window "
 
-export OA_PERSONALITY_DIR="$PWD/personalities/default"
+export OA_MIND_DIR="$PWD/minds/default"
 
 #export CONFIGDIR="/var/lib/openassistant/etc"
 #export DATADIR="/var/lib/openassistant/data"

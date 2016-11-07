@@ -8,9 +8,9 @@
 
 # hello.sh
 
-greeting=$OA_PERSONALITY_DIR/etc/greeting
-name=$OA_PERSONALITY_DIR/etc/name
-question=$OA_PERSONALITY_DIR/etc/question
+greeting=$OA_MIND_DIR/etc/greeting
+name=$OA_MIND_DIR/etc/name
+question=$OA_MIND_DIR/etc/question
 
 shuf -n1 > $greeting <<EOFgreeting
 greetings
