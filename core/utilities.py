@@ -23,12 +23,12 @@ class Config:
     """OPEN ASSISTANT CONFIGURATION"""
 
     # DIRECTORIES
-    mind_dir = os.environ['OA_MIND_DIR']
+    mind_dir = os.environ['MINDDIR']
     
-    conf_dir = os.path.join(mind_dir, 'etc')
-    cache_dir = os.path.join(mind_dir, 'cache')
-    data_dir = os.path.join(mind_dir, 'language')
-    img_dir = os.path.join(mind_dir, 'img')
+    conf_dir = os.path.join(mind_dir, 'words')
+    cache_dir = os.path.join(mind_dir, 'words')
+    data_dir = os.path.join(mind_dir, 'words')
+    img_dir = os.path.join(mind_dir, 'images')
 
     # CONFIGURATION FILES
     opt_file = os.path.join(conf_dir, "commands.json")
