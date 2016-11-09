@@ -4,97 +4,9 @@
 
 # utilities.py - System Utilities
 
-import os
-import re
+
 import json
 import hashlib
-import urllib.request, urllib.parse, urllib.error
-
-from argparse import ArgumentParser, Namespace
-
-import requests
-
-
-NET_TEST_SERVER = "http://www.speech.cs.cmu.edu"
-
-
-class Config:
-
-    """OPEN ASSISTANT CONFIGURATION"""
-
-    # DIRECTORIES
-    mind_dir = os.environ['OA_MIND_DIR']
-    
-    conf_dir = os.path.join(mind_dir, 'etc')
-    cache_dir = os.path.join(mind_dir, 'cache')
-    data_dir = os.path.join(mind_dir, 'language')
-    img_dir = os.path.join(mind_dir, 'img')
-
-    # CONFIGURATION FILES
-    opt_file = os.path.join(conf_dir, "commands.json")
-
-    # CACHE FILES
-    history_file = os.path.join(cache_dir, "history")
-    hash_file = os.path.join(cache_dir, "hash.json")
-
-    # DATA FILES
-    strings_file = os.path.join(data_dir, "sentences.corpus")
-    lang_file = os.path.join(data_dir, 'lm')
-    dic_file = os.path.join(data_dir, 'dic')
-
-    def __init__(self):
-        # MAKE DIRECTORIES IF NEEDED
-        self._make_dir(self.conf_dir)
-        self._make_dir(self.cache_dir)
-        self._make_dir(self.data_dir)
-
-        # SET UP ARGUMENT PARSER
-        self._parser = ArgumentParser()
-
-        self._parser.add_argument("-c", "--continuous",
-                action="store_true", dest="continuous", default=False,
-                help="Start interface with 'continuous' listen enabled")
-
-        self._parser.add_argument("-p", "--pass-words",
-                action="store_true", dest="pass_words", default=False,
-                help="Pass the recognized words as arguments to the shell" +
-                " command")
-
-        self._parser.add_argument("-H", "--history", type=int,
-                action="store", dest="history",
-                help="Number of commands to store in history file")
-
-        self._parser.add_argument("-m", "--microphone", type=int,
-                action="store", dest="microphone", default=None,
-                help="Audio input card to use (if other than system default)")
-
-        self._parser.add_argument("--valid-sentence-command", type=str,
-                dest="valid_sentence_command", action='store',
-                help="Command to run when a valid sentence is detected")
-
-        self._parser.add_argument("--invalid-sentence-command", type=str,
-                dest="invalid_sentence_command", action='store',
-                help="Command to run when an invalid sentence is detected")
-
-        # READ THE CONFIGURATION FILE
-        self._read_options_file()
-
-        # PARSE COMMAND-LINE ARGUMENTS, OVERRIDING CONFIG FILE AS APPROPRIATE
-        self._parser.parse_args(namespace=self.options)
-
-    def _make_dir(self, directory):
-        if not os.path.exists(directory):
-            os.makedirs(directory)
-
-    def _read_options_file(self):
-        try:
-            with open(self.opt_file, 'r') as f:
-                self.options = json.load(f)
-                self.options = Namespace(**self.options)
-        except FileNotFoundError:
-            # MAKE AN EMPTY OPTIONS NAMESPACE
-            self.options = Namespace()
-
 
 class Hasher:
     """Keep track of hashes"""
@@ -126,6 +38,18 @@ class Hasher:
         with open(self.config.hash_file, 'w') as f:
             json.dump(self.hashes, f)
 
+
+
+
+
+
+import re
+import urllib.request, urllib.parse, urllib.error
+
+import requests
+
+
+NET_TEST_SERVER = "http://www.speech.cs.cmu.edu"
 
 class LanguageUpdater:
     """
