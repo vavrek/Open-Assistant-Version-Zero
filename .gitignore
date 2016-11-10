@@ -20,4 +20,4 @@ var/
 .installed.cfg
 *.egg
 
-minds/**/cache
+mind/**/cache
