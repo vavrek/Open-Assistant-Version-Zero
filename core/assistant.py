@@ -1,8 +1,8 @@
-# OpenAssistant 0.03
+# Open Assistant 0.03
 # 2016 General Public License V3
 # By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 
-# core.py - System Core
+# core.py - Open Assistant System Core
 
 import os
 import sys
@@ -99,14 +99,14 @@ class Assistant:
         if t in self.commands:
             # Run The 'valid_sentence_command' If It's Set
             os.system('clear')
-            print("OpenAssistant: \x1b[32mListening\x1b[0m")
+            print("Open Assistant: \x1b[32mListening\x1b[0m")
             if self.options['valid_sentence_command']:
                 subprocess.call(self.options['valid_sentence_command'],
                                 shell=True)
             cmd = self.commands[t]
             # Should We Be Passing Words?
             os.system('clear')
-            print("OpenAssistant: \x1b[32mListening\x1b[0m")
+            print("Open Assistant: \x1b[32mListening\x1b[0m")
             if self.options['pass_words']:
                 cmd += " " + t
             print("\x1b[32m< ! >\x1b[0m {0}".format(t))
@@ -115,7 +115,7 @@ class Assistant:
         elif numt in self.commands:
             # Run 'valid_sentence_command' Set
             os.system('clear')
-            print("OpenAssistant: \x1b[32mListening\x1b[0m")
+            print("Open Assistant: \x1b[32mListening\x1b[0m")
             if self.options['valid_sentence_command']:
                 subprocess.call(self.options['valid_sentence_command'],
                                 shell=True)

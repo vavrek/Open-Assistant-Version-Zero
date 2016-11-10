@@ -1,6 +1,0 @@
-FROM __init__
-
-    #self._parser.add_argument("-i", "--interface", type=str,
-    #        dest="interface", action='store',
-    #        help="Interface to use (if any). 'g' for GTK or 'gt' for GTK" +
-    #        " system tray icon")
