@@ -62,17 +62,6 @@ class Assistant:
             self.hasher['voice_commands'] = new_hash
             self.hasher.store()
 
-    def create_strings_file(self):
-        # Open Strings File
-        with open(self.config.strings_file, 'w') as strings:
-            # Add Command Words To The Corpus
-            for voice_cmd in sorted(self.commands.keys()):
-                strings.write(voice_cmd.strip().replace('%d', '') + "\n")
-            # Add Number Words To The Corpus
-            for word in self.number_parser.number_words:
-                strings.write(word + " ")
-            strings.write("\n")
-
     def log_history(self, text):
         if self.options['history']:
             self.history.append(text)
