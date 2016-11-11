@@ -22,7 +22,7 @@ class Assistant:
         
         # Load Configuration
         #self.config = Config()
-        #self.options = vars(self.config.options)
+        #self.config.options = vars(self.config.options)
         self.commands = self.config.commands
 
         # Create Hasher
@@ -30,6 +30,7 @@ class Assistant:
 
         # Create Strings File
         #self.update_voice_commands_if_changed()
+        self.number_parser = NumberParser()
         
         # Optional: History
         self.history = []
@@ -62,9 +63,9 @@ class Assistant:
     #        self.hasher.store()
 
     def log_history(self, text):
-        if self.options['history']:
+        if self.config.options['history']:
             self.history.append(text)
-            if len(self.history) > self.options['history']:
+            if len(self.history) > self.config.options['history']:
                 # Pop Off First Item
                 self.history.pop(0)
 
@@ -88,14 +89,14 @@ class Assistant:
             # Run The 'valid_sentence_command' If It's Set
             os.system('clear')
             print("Open Assistant: \x1b[32mListening\x1b[0m")
-            if self.options['valid_sentence_command']:
-                subprocess.call(self.options['valid_sentence_command'],
+            if self.config.options['valid_sentence_command']:
+                subprocess.call(self.config.options['valid_sentence_command'],
                                 shell=True)
             cmd = self.commands[t]
             # Should We Be Passing Words?
             os.system('clear')
             print("Open Assistant: \x1b[32mListening\x1b[0m")
-            if self.options['pass_words']:
+            if self.config.options['pass_words']:
                 cmd += " " + t
             print("\x1b[32m< ! >\x1b[0m {0}".format(t))
             self.run_command(cmd)
@@ -104,21 +105,21 @@ class Assistant:
             # Run 'valid_sentence_command' Set
             os.system('clear')
             print("Open Assistant: \x1b[32mListening\x1b[0m")
-            if self.options['valid_sentence_command']:
-                subprocess.call(self.options['valid_sentence_command'],
+            if self.config.options['valid_sentence_command']:
+                subprocess.call(self.config.options['valid_sentence_command'],
                                 shell=True)
             cmd = self.commands[numt]
             cmd = cmd.format(*nums)
             # Should We Be Passing Words?
-            if self.options['pass_words']:
+            if self.config.options['pass_words']:
                 cmd += " " + t
             print("\x1b[32m< ! >\x1b[0m {0}".format(t))
             self.run_command(cmd)
             self.log_history(text)
         else:
             # Run The Invalid_sentence_command If It's Set
-            if self.options['invalid_sentence_command']:
-                subprocess.call(self.options['invalid_sentence_command'],
+            if self.config.options['invalid_sentence_command']:
+                subprocess.call(self.config.options['invalid_sentence_command'],
                                 shell=True)
             print("\x1b[31m< ? >\x1b[0m {0}".format(t))
 
