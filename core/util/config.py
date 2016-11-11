@@ -1,4 +1,5 @@
 import os
+import json
 
 class Config:
     """OPEN ASSISTANT CONFIGURATION"""
@@ -28,6 +29,7 @@ class Config:
         self._make_dir(self.data_dir)
         
         self.options = self._read_options_file()
+        self.commands = self.options['commands']
 
     def _make_dir(self, directory):
         if not os.path.exists(directory):
@@ -46,7 +48,7 @@ class Config:
         # Open Strings File
         with open(self.strings_file, 'w') as strings:
             # Add Command Words To The Corpus
-            for voice_cmd in sorted(self.commands.keys()):
+            for voice_cmd in sorted(self.options.commands.keys()):
                 strings.write(voice_cmd.strip().replace('%d', '') + "\n")
             # Add Number Words To The Corpus
             for word in self.number_parser.number_words:
