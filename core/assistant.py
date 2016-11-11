@@ -8,59 +8,58 @@ import os
 import sys
 import subprocess
 
+from .util.hasher import Hasher
+from .util.language_updater import LanguageUpdater
+
 from .recognizer import Recognizer
-from .utilities import Config, Hasher, LanguageUpdater
 from .numbers import NumberParser
 
 
 class Assistant:
 
-    def __init__(self):
-        self.options = {}
-        self.continuous_listen = False
-
+    def __init__(self, config=None):
+        self.config = config if config is not None else {}
+        
         # Load Configuration
-        self.config = Config()
-        self.options = vars(self.config.options)
-        self.commands = self.options['commands']
-
-        # Create Number Parser
-        self.number_parser = NumberParser()
+        #self.config = Config()
+        #self.options = vars(self.config.options)
+        self.commands = self.config.commands
 
         # Create Hasher
-        self.hasher = Hasher(self.config)
+        #self.hasher = Hasher(self.config)
 
         # Create Strings File
-        self.update_voice_commands_if_changed()
+        #self.update_voice_commands_if_changed()
         
         # Optional: History
-        if self.options['history']:
-            self.history = []
+        self.history = []
+        #if self.config['history']:
+        #    self.history = []
 
         # Update Language If Changed
-        self.language_updater = LanguageUpdater(self.config)
-        self.language_updater.update_language_if_changed()
+        #self.language_updater = LanguageUpdater(self.config)
+        #self.language_updater.update_language_if_changed()
 
         # Create Recognizer
         self.recognizer = Recognizer(self.config)
         self.recognizer.connect('finished', self.recognizer_finished)
 
-    def update_voice_commands_if_changed(self):
-        """USE HASHES TO TEST IF THE VOICE COMMANDS HAVE CHANGED"""
-        stored_hash = self.hasher['voice_commands']
+    #def update_voice_commands_if_changed(self):
+    #    """USE HASHES TO TEST IF THE VOICE COMMANDS HAVE CHANGED"""
+    #    stored_hash = self.hasher['voice_commands']
 
-        # Calculate The Hash The Voice Commands Have Right Now
-        hasher = self.hasher.get_hash_object()
-        for voice_cmd in self.commands.keys():
-            hasher.update(voice_cmd.encode('utf-8'))
-            # Add A Separator To Avoid Odd Behavior
-            hasher.update('\n'.encode('utf-8'))
-        new_hash = hasher.hexdigest()
+    #    # Calculate The Hash The Voice Commands Have Right Now
+    #    hasher = self.hasher.get_hash_object()
+    #    for voice_cmd in self.commands.keys():
+    #        hasher.update(voice_cmd.encode('utf-8'))
+    #        # Add A Separator To Avoid Odd Behavior
+    #        hasher.update('\n'.encode('utf-8'))
+    #    new_hash = hasher.hexdigest()
 
-        if new_hash != stored_hash:
-            self.create_strings_file()
-            self.hasher['voice_commands'] = new_hash
-            self.hasher.store()
+    #    if new_hash != stored_hash:
+    #        self.create_strings_file()
+    #        self.hasher['voice_commands'] = new_hash
+    #        self.hasher.store()
 
     def log_history(self, text):
         if self.options['history']:
