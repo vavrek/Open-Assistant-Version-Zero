@@ -25,7 +25,7 @@ class Recognizer(GObject.GObject):
         self.commands = {}
 
         # Configure Audio Source
-        src = config.options.microphone
+        src = config.options['microphone']
         if src:
             audio_src = 'alsasrc device="hw:{0},0"'.format(src)
         else:
