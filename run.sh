@@ -6,30 +6,21 @@
 
 # assist.sh - Assistant Launch Script
 
-# Global Variables
+# Environment Configuration
+ROOT=$( cd $(dirname $0) ; pwd -P )
+MINDDIR="$ROOT/mind/empty"
 
-export MINDDIR="$PWD/mind/stella"
-export ASSISTNAME=$(hostname)
-export USERNAME=$(whoami)
-export VOICE="/usr/bin/festival --tts"
-export BROWSER="firefox"
-export KEYPRESS="xvkbd -xsendevent -secure -text"
-export TERMINAL="tmux new-window "
 
-# Set Permissions For Words Directory
+# Use system speech synthesizer on macOS
+if [[ "`uname`" == "Darwin" ]]
+then
+	export VOICE="say"
+else
+	export VOICE="/usr/bin/festival --tts"
+fi
 
-chmod +wx * $MINDDIR/words
-
-# Launch OpenAssistant In Continuous Mode
-# With History Of 20 Recent Commands
-
-python3.5 assistant.py -c -H 20 -m 0
-
-# Launch In 'Continuous' Listen Mode: add "-c"
-# Use Mic Other Than System Default: add "-m <device Number>"
-# Find Mic Device Number: "cat /proc/asound/cards" Or "arecord -l"
-# Pass Each Word As A Separate Argument: add "-p"
-# Run Command Each Valid Sentence: "--valid-sentence-command=/path/to/command"
-# Run Command Each Invalid Sentence: "--invalid-sentence-command=/path/to/command"
-
-# Default Arguments Configured In "./etc/commands.json"
+# Launch OpenAssistant
+# 	-c	In ContinuousMode
+# 	-H 20	With HistoryLength 20
+# 	-m 0	With InputDevice 0
+python3.5 "$ROOT/run.py" -c -H 20 -m 0 --mind "$MINDDIR" $@
