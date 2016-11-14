@@ -1,13 +1,5 @@
 {
-	"continuous": false,
-	"history": true,
-	"microphone": true,
-	"interface": null,
-	"valid_sentence_command": false,
-	"invalid_sentence_command": false,
-
-	"commands": {
-	    "hello": "echo hello | $VOICE",
-	    "hello world": "echo hello world | $VOICE"
-	}
+    "hello": "echo hello | $VOICE",
+    "hello world": "echo hello world | $VOICE",
+	"super test": "echo ok, it worked | $VOICE"
 }
