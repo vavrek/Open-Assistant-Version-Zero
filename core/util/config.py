@@ -17,7 +17,8 @@ class Config:
         self.img_dir = os.path.join(path, 'images')
 
         # CONFIGURATION FILES
-        self.opt_file = os.path.join(self.conf_dir, "commands.json")
+        self.opt_file = os.path.join(self.conf_dir, "settings.json")
+        self.cmd_file = os.path.join(self.conf_dir, "commands.json")
 
         # CACHE FILES
         self.history_file = os.path.join(self.cache_dir, "history")
@@ -33,8 +34,8 @@ class Config:
         self._make_dir(self.data_dir)
         
         self.options = self._read_options_file()
-        self.commands = None
-        #self.create_strings_file()
+        self.commands = self._read_commands_file()
+        self.create_strings_file()
 
 
     def _make_dir(self, directory):
@@ -49,20 +50,31 @@ class Config:
                 return _options
         except FileNotFoundError:
             # MAKE AN EMPTY OPTIONS NAMESPACE
-            print("No options file found: %s".format(self.opt_file))
+            logger.warn("No options file found: %s".format(self.opt_file))
             return {}
 
+
+    def _read_commands_file(self):
+        try:
+            with open(self.cmd_file, 'r') as f:
+                _cmds = json.load(f)
+                return _cmds
+        except FileNotFoundError:
+            # MAKE AN EMPTY OPTIONS NAMESPACE
+            logger.warn("No commands file found: %s".format(self.cmd_file))
+            return {}
+            
 
     def create_strings_file(self):
         # Open Strings File
         with open(self.strings_file, 'w') as strings:
             # Add Command Words To The Corpus
-            for voice_cmd in sorted(self.options.commands.keys()):
+            for voice_cmd in sorted(self.commands.keys()):
                 strings.write(voice_cmd.strip().replace('%d', '') + "\n")
             # Add Number Words To The Corpus
-            for word in self.number_parser.number_words:
-                strings.write(word + " ")
-            strings.write("\n")
+            #for word in self.number_parser.number_words:
+            #    strings.write(word + " ")
+            #strings.write("\n")
 
 
     #def update_voice_commands_if_changed(self):
