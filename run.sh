@@ -23,4 +23,5 @@ fi
 # 	-c	In ContinuousMode
 # 	-H 20	With HistoryLength 20
 # 	-m 0	With InputDevice 0
-python3.5 "$ROOT/run.py" -c -H 20 -m 0 --mind "$MINDDIR" $@
+#	--mind "$MINDDIR"
+python3.5 "$ROOT/run.py" $@
