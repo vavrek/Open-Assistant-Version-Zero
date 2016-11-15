@@ -52,9 +52,7 @@ class LanguageUpdater:
 
     def update_language(self):
         """Update the language using the online lmtool"""
-        logger.debug("Updating Language")
-
-        print('OpenAssistant: \x1b[32mUpdating Commands\x1b[0m')
+        logger.debug("\x1b[32mUpdating Language\x1b[0m")
 
         host = 'http://www.speech.cs.cmu.edu'
         url = host + '/cgi-bin/tools/lmtool/run'
