@@ -5,7 +5,6 @@
 # recognizer.py - Voice Recognition
 
 import os.path
-import sys
 
 import gi
 gi.require_version('Gst', '1.0')
