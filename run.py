@@ -13,7 +13,7 @@ from core import Config, Assistant
 #from core.numbers import NumberParser
 #from core.recognizer import Recognizer
 #from core.util.hasher import Hasher
-#from core.util.language_updater import LanguageUpdater
+from core.util.language_updater import LanguageUpdater
 
 
 logging.basicConfig(level=logging.DEBUG)
@@ -145,18 +145,15 @@ if __name__ == '__main__':
     args = _parser(sys.argv[1:])
     logger.debug("Arguments: {args}".format(args=args))
     conf = Config(path=args.mind_dir, **vars(args))
-
-
-    # A configured Assistant
-    a = Assistant(config=conf)
     
     
+    l = LanguageUpdater(conf)
+    l.update_language()
+    
+
     #
     # Further patching to ease transition..
     #
-    # Create Hasher
-    #self.hasher = Hasher(self.config)
-    
     # Update Language If Changed
     #self.language_updater = LanguageUpdater(self.config)
     #self.language_updater.update_language_if_changed()
@@ -169,6 +166,10 @@ if __name__ == '__main__':
     #
     # End patching
     #
+
+
+    # A configured Assistant
+    a = Assistant(config=conf)
     
     
     #

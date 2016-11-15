@@ -1,9 +1,12 @@
 import re
+import logging
 import urllib.request, urllib.parse, urllib.error
 
 import requests
 
 from .hasher import Hasher
+
+logger = logging.getLogger(__name__)
 
 
 NET_TEST_SERVER = "http://www.speech.cs.cmu.edu"
@@ -49,6 +52,8 @@ class LanguageUpdater:
 
     def update_language(self):
         """Update the language using the online lmtool"""
+        logger.debug("Updating Language")
+
         print('OpenAssistant: \x1b[32mUpdating Commands\x1b[0m')
 
         host = 'http://www.speech.cs.cmu.edu'
