@@ -143,7 +143,7 @@ if __name__ == '__main__':
     #  use `Config` to load mind configuration
     #  command-line overrides config file
     args = _parser(sys.argv[1:])
-    logger.debug("Arguments: {args}".format(args))
+    logger.debug("Arguments: {args}".format(args=args))
     conf = Config(path=args.mind_dir, **vars(args))
 
 
