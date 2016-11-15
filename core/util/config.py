@@ -71,25 +71,3 @@ class Config:
             # Add Command Words To The Corpus
             for voice_cmd in sorted(self.commands.keys()):
                 strings.write(voice_cmd.strip().replace('%d', '') + "\n")
-            # Add Number Words To The Corpus
-            #for word in self.number_parser.number_words:
-            #    strings.write(word + " ")
-            #strings.write("\n")
-
-
-    #def update_voice_commands_if_changed(self):
-    #   """USE HASHES TO TEST IF THE VOICE COMMANDS HAVE CHANGED"""
-       #stored_hash = self.hasher['voice_commands']
-
-       # Calculate The Hash The Voice Commands Have Right Now
-       #hasher = self.hasher.get_hash_object()
-       #for voice_cmd in self.commands.keys():
-        #   hasher.update(voice_cmd.encode('utf-8'))
-           # Add A Separator To Avoid Odd Behavior
-        #   hasher.update('\n'.encode('utf-8'))
-       #new_hash = hasher.hexdigest()
-
-       #if new_hash != stored_hash:
-    #   self.create_strings_file()
-           #self.hasher['voice_commands'] = new_hash
-           #self.hasher.store()
