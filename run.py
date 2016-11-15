@@ -157,15 +157,6 @@ if __name__ == '__main__':
     # Create Hasher
     #self.hasher = Hasher(self.config)
     
-    # Create Strings File
-    #self.update_voice_commands_if_changed()
-    #self.number_parser = NumberParser()
-    
-    # Add Number Words To The Corpus
-    #for word in self.number_parser.number_words:
-    #    strings.write(word + " ")
-    #strings.write("\n")
-
     # Update Language If Changed
     #self.language_updater = LanguageUpdater(self.config)
     #self.language_updater.update_language_if_changed()
