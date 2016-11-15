@@ -16,6 +16,10 @@ from core import Config, Assistant
 #from core.util.language_updater import LanguageUpdater
 
 
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)    
+
+
 def _parser(args):
     parser = ArgumentParser()
 
@@ -49,7 +53,6 @@ def _parser(args):
             help="Path to mind to use for assistant")
 
     return parser.parse_args(args)
-
 
 
 def recognizer_finished(self, recognizer, text):
@@ -136,15 +139,12 @@ def process_command(self, command):
 
 if __name__ == '__main__':
     
-    logging.basicConfig(level=logging.INFO)
-    logger = logging.getLogger(__name__)
-    
     # Parse command-line options,
     #  use `Config` to load mind configuration
     #  command-line overrides config file
-    opts = _parser(sys.argv[1:])
-    logger.info(opts)
-    conf = Config(path=opts.mind_dir, **vars(opts))
+    args = _parser(sys.argv[1:])
+    logger.debug("Arguments: {args}".format(args))
+    conf = Config(path=args.mind_dir, **vars(args))
 
 
     # A configured Assistant

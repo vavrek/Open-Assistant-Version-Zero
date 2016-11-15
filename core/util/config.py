@@ -8,7 +8,7 @@ class Config:
     """OPEN ASSISTANT CONFIGURATION"""
 
     def __init__(self, path=None, **opts):
-        logger.info("Configuration")
+        logger.info("Loading Mind: {path}".format(path=path))
         
         # DIRECTORIES
         self.cache_dir = os.path.join(path, 'cache')
