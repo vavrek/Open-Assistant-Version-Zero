@@ -1,8 +1,9 @@
+import logging
+logger = logging.getLogger(__name__)
+
 import os
 import json
 
-import logging
-logger = logging.getLogger(__name__)
 
 class Config:
     """OPEN ASSISTANT CONFIGURATION"""
@@ -50,7 +51,7 @@ class Config:
                 return _options
         except FileNotFoundError:
             # MAKE AN EMPTY OPTIONS NAMESPACE
-            logger.warn("No options file found: %s".format(self.opt_file))
+            logger.warn("Error loading options file: {path}".format(path=self.opt_file))
             return {}
 
 
@@ -61,7 +62,7 @@ class Config:
                 return _cmds
         except FileNotFoundError:
             # MAKE AN EMPTY OPTIONS NAMESPACE
-            logger.warn("No commands file found: %s".format(self.cmd_file))
+            logger.warn("Error loading commands file: {path}".format(path=self.cmd_file))
             return {}
             
 
