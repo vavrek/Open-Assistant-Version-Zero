@@ -16,7 +16,8 @@ import subprocess
 #from gi.repository import GObject
 
 from core import Config, Assistant
-from core.util.language_updater import LanguageUpdater
+
+from modules.language import LanguageUpdater
 #from core.numbers import NumberParser
 #from core.recognizer import Recognizer
 #from core.util.hasher import Hasher
