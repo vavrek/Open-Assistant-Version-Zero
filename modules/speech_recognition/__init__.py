@@ -32,7 +32,8 @@ class Recognizer(GObject.GObject):
         # Configure Audio Source
         src = config.options['microphone']
         if src:
-            audio_src = 'alsasrc device="hw:{0},0"'.format(src)
+            #audio_src = 'alsasrc device="hw:{0},0"'.format(src)
+            audio_src = 'autoaudiosrc device="hw:{0},0"'.format(src)
         else:
             audio_src = 'autoaudiosrc'
 

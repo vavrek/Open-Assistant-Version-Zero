@@ -14,7 +14,6 @@ MINDDIR="$ROOT/mind/empty"
 # Use system speech synthesizer on macOS
 if [[ "`uname`" == "Darwin" ]]
 then
-	export GSTREAMER_LIB_PATH=/usr/local/lib/gstreamer-1.0
 	export VOICE="say"
 else
 	export VOICE="/usr/bin/festival --tts"
