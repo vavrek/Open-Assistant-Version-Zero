@@ -77,8 +77,8 @@ def recognizer_finished(a, recognizer, text):
         if a.config.options['pass_words']:
             cmd += " " + t
         print("\x1b[32m< ! >\x1b[0m {0}".format(t))
-        #run_command(cmd)
-        #log_history(text)
+        run_command(a, cmd)
+        log_history(a, text)
     #elif numt in self.commands:
     #    # Run 'valid_sentence_command' Set
     #    os.system('clear')
@@ -102,25 +102,25 @@ def recognizer_finished(a, recognizer, text):
         print("\x1b[31m< ? >\x1b[0m {0}".format(t))
         
 
-def log_history(self, text):
-    if self.config.options['history']:
-        self.history.append(text)
-        if len(self.history) > self.config.options['history']:
+def log_history(a, text):
+    if a.config.options['history']:
+        a.history.append(text)
+        if len(a.history) > a.config.options['history']:
             # Pop Off First Item
-            self.history.pop(0)
+            a.history.pop(0)
 
         # Open And Truncate History File
-        with open(self.config.history_file, 'w') as hfile:
-            for line in self.history:
+        with open(a.config.history_file, 'w') as hfile:
+            for line in a.history:
                 hfile.write(line + '\n')
                 
 
-def run_command(self, cmd):
+def run_command(a, cmd):
     """PRINT COMMAND AND RUN"""
     print("\x1b[32m< ! >\x1b[0m", cmd)
-    self.recognizer.pause()
+    #self.recognizer.pause()
     subprocess.call(cmd, shell=True)
-    self.recognizer.listen()
+    #self.recognizer.listen()
 
     
 def process_command(self, command):

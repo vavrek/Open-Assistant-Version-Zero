@@ -12,4 +12,5 @@ class Assistant:
     def __init__(self, config=None):
         logger.info("Initializing Assistant")
         self.config = config if config is not None else {}
+        self.history = []
         logger.debug(self.config)
