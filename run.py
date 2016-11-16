@@ -18,9 +18,8 @@ import subprocess
 from core import Config, Assistant
 
 from modules.language import LanguageUpdater
+from modules.speech_recognition import Recognizer
 #from core.numbers import NumberParser
-#from core.recognizer import Recognizer
-#from core.util.hasher import Hasher
 
 
 def _parser(args):
@@ -58,7 +57,7 @@ def _parser(args):
     return parser.parse_args(args)
 
 
-def recognizer_finished(self, recognizer, text):
+def recognizer_finished(a, recognizer, text):
     t = text.lower()
     numt, nums = self.number_parser.parse_all_numbers(t)
     # Is There A Matching Command?
@@ -149,28 +148,28 @@ if __name__ == '__main__':
     logger.debug("Arguments: {args}".format(args=args))
     conf = Config(path=args.mind_dir, **vars(args))
     
-    # Build dictionary and language model
-    logger.debug("Creating Language Files")
-    l = LanguageUpdater(conf)
-    l.update_language()
+    # A configured Assistant
+    a = Assistant(config=conf)
     
+
     #
     # Further patching to ease transition..
     #
 
+    # Build dictionary and language model
+    logger.debug("Module: Language")
+    l = LanguageUpdater(conf)
+    l.update_language()
+    
     # Create Recognizer
-    #self.recognizer = Recognizer(self.config)
-    #recognizer = Recognizer(config)
-    #self.recognizer.connect('finished', self.recognizer_finished)
-    #recognizer.connect('finished', recognizer_finished)
+    logger.debug("Module: Speech Recognition")
+    recognizer = Recognizer(conf)
+    recognizer.connect('finished', lambda rec, txt, agent=a: recognizer_finished(agent, rec, txt))
+
     #
     # End patching
     #
-
-
-    # A configured Assistant
-    a = Assistant(config=conf)
-    
+        
     
     #
     # Questionable dependencies
