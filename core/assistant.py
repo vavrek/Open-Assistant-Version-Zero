@@ -5,10 +5,6 @@
 # core.py - Open Assistant System Core
 
 import logging
-import os
-import sys
-import subprocess
-
 logger = logging.getLogger(__name__)
 
 class Assistant:
