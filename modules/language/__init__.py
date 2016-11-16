@@ -1,12 +1,14 @@
-import re
 import logging
+logger = logging.getLogger(__name__)
+
+
+import re
 import urllib.request, urllib.parse, urllib.error
 
 import requests
 
-from .hasher import Hasher
+#from .hasher import Hasher
 
-logger = logging.getLogger(__name__)
 
 
 NET_TEST_SERVER = "http://www.speech.cs.cmu.edu"
@@ -23,32 +25,32 @@ class LanguageUpdater:
 
     def __init__(self, config):
         self.config = config
-        self.hasher = Hasher(config)
+        #self.hasher = Hasher(config)
 
-    def update_language_if_changed(self):
-        """TEST IF THE LANGUAGE HAS CHANGED"""
-        if self.language_has_changed():
-            """TEST NET CONNECTION AND UPDATE IF CONNECTED"""
-            try:
-              response=urllib.request.urlopen(NET_TEST_SERVER,timeout=1)
-              print ("OpenAssistant: \x1b[32mNetwork Connection Established\x1b[0m")
-              self.update_language()
-              self.save_language_hash()
-            except urllib.error.URLError as e: pass
-            print ("OpenAssistant: \x1b[31mNo Network Connection\x1b[0m")
-
-    def language_has_changed(self):
-        """Use hashes to test if the language has changed"""
-        self.stored_hash = self.hasher['language']
-
-        # CALCULATE LANGUAGE FILE HASH
-        hasher = self.hasher.get_hash_object()
-        with open(self.config.strings_file, 'rb') as sfile:
-            buf = sfile.read()
-            hasher.update(buf)
-        self.new_hash = hasher.hexdigest()
-
-        return self.new_hash != self.stored_hash
+    # def update_language_if_changed(self):
+    #     """TEST IF THE LANGUAGE HAS CHANGED"""
+    #     if self.language_has_changed():
+    #         """TEST NET CONNECTION AND UPDATE IF CONNECTED"""
+    #         try:
+    #           response=urllib.request.urlopen(NET_TEST_SERVER,timeout=1)
+    #           print ("OpenAssistant: \x1b[32mNetwork Connection Established\x1b[0m")
+    #           self.update_language()
+    #           self.save_language_hash()
+    #         except urllib.error.URLError as e: pass
+    #         print ("OpenAssistant: \x1b[31mNo Network Connection\x1b[0m")
+    #
+    # def language_has_changed(self):
+    #     """Use hashes to test if the language has changed"""
+    #     self.stored_hash = self.hasher['language']
+    #
+    #     # CALCULATE LANGUAGE FILE HASH
+    #     hasher = self.hasher.get_hash_object()
+    #     with open(self.config.strings_file, 'rb') as sfile:
+    #         buf = sfile.read()
+    #         hasher.update(buf)
+    #     self.new_hash = hasher.hexdigest()
+    #
+    #     return self.new_hash != self.stored_hash
 
     def update_language(self):
         """Update the language using the online lmtool"""
@@ -87,9 +89,9 @@ class LanguageUpdater:
         self._download_file(lm_url, self.config.lang_file)
         self._download_file(dic_url, self.config.dic_file)
 
-    def save_language_hash(self):
-        self.hasher['language'] = self.new_hash
-        self.hasher.store()
+    # def save_language_hash(self):
+    #     self.hasher['language'] = self.new_hash
+    #     self.hasher.store()
 
     def _download_file(self, url, path):
         r = requests.get(url, stream=True)
