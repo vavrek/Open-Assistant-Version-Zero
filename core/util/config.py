@@ -36,7 +36,6 @@ class Config:
         
         self.options = self._read_options_file()
         self.commands = self._read_commands_file()
-        self.create_strings_file()
 
 
     def _make_dir(self, directory):
@@ -64,11 +63,3 @@ class Config:
             # MAKE AN EMPTY OPTIONS NAMESPACE
             logger.warn("Error loading commands file: {path}".format(path=self.cmd_file))
             return {}
-            
-
-    def create_strings_file(self):
-        # Open Strings File
-        with open(self.strings_file, 'w') as strings:
-            # Add Command Words To The Corpus
-            for voice_cmd in sorted(self.commands.keys()):
-                strings.write(voice_cmd.strip().replace('%d', '') + "\n")

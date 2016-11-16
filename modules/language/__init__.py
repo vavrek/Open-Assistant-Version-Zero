@@ -10,7 +10,6 @@ import requests
 #from .hasher import Hasher
 
 
-
 NET_TEST_SERVER = "http://www.speech.cs.cmu.edu"
 
 class LanguageUpdater:
@@ -25,6 +24,8 @@ class LanguageUpdater:
 
     def __init__(self, config):
         self.config = config
+        self.create_strings_file()
+        
         #self.hasher = Hasher(config)
 
     # def update_language_if_changed(self):
@@ -51,6 +52,15 @@ class LanguageUpdater:
     #     self.new_hash = hasher.hexdigest()
     #
     #     return self.new_hash != self.stored_hash
+    
+
+    def create_strings_file(self):
+        # Open Strings File
+        with open(self.config.strings_file, 'w') as strings:
+            # Add Command Words To The Corpus
+            for voice_cmd in sorted(self.config.commands.keys()):
+                strings.write(voice_cmd.strip().replace('%d', '') + "\n")
+
 
     def update_language(self):
         """Update the language using the online lmtool"""
