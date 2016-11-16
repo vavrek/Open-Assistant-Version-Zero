@@ -1,7 +1,4 @@
 {
-
-"commands": {
-
     "absolutely": "$MINDDIR/words/yes.sh",
     "absolutely not": "$MINDDIR/words/no.sh",
     "absurd": "echo totally ridiculous... | $VOICE",
@@ -597,12 +594,4 @@
     "you're fantastic": "$MINDDIR/words/thanks.sh",
     "you're super": "$MINDDIR/words/thanks.sh",
     "you're wonderful": "$MINDDIR/words/thanks.sh"
-},
-
-"continuous": false,
-"history": true,
-"microphone": true,
-"interface": null,
-"valid_sentence_command": false,
-"invalid_sentence_command": false
 }

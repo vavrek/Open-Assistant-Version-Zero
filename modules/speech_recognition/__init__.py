@@ -4,8 +4,10 @@
 
 # recognizer.py - Voice Recognition
 
+import logging
+logger = logging.getLogger(__name__)
+
 import os.path
-import sys
 
 import gi
 gi.require_version('Gst', '1.0')
@@ -23,11 +25,15 @@ class Recognizer(GObject.GObject):
     def __init__(self, config):
         GObject.GObject.__init__(self)
         self.commands = {}
+        logger.debug("Initializing Recognizer")
+        logger.debug(config)
+        logger.debug(config.options)
 
         # Configure Audio Source
-        src = config.options.microphone
+        src = config.options['microphone']
         if src:
-            audio_src = 'alsasrc device="hw:{0},0"'.format(src)
+            #audio_src = 'alsasrc device="hw:{0},0"'.format(src)
+            audio_src = 'autoaudiosrc device="hw:{0},0"'.format(src)
         else:
             audio_src = 'autoaudiosrc'
 

@@ -42,19 +42,19 @@ Running OpenAssistant
 
 * Download and unpack the latest ``openassistant-master.zip`` package.
 
-* Edit ``assist.sh`` to configure desired variables, then save.
+* Edit ``run.sh`` to configure desired variables, then save.
 
-* Make ``assist.sh`` executable with: ``$chmod +x ./assist.sh``
+* Make ``run.sh`` executable with: ``$chmod +x ./run.sh``
 
-* Run ``./assist.sh``. Global variables will be set and ``assistant.py`` will launch.
+* Run ``./run.sh -c -H20 -m0 -M mind/stella``. Global variables will be set and ``run.py`` will launch.
 
-* If ``./etc/commands.json`` has changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
+* If ``$MINDDIR/conf/commands.json`` has changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
 
 * Say "Hello!" :) To mute, say "Be quiet" or "Silence". To unmute, say "Talk to me". 
 
 * To quit, say "Goodbye" or "Farewell."
 
-* To change assistant commands and language, edit ``./etc/commands.json``. Exit and relaunch ``assist.sh``.
+* To change assistant commands and language, edit ``$MINDDIR/conf/commands.json``. Exit and relaunch ``run.sh``.
 
 * For help, you can receive support in the `OpenAssistant Forum <http://openassistant.org/community/>`_.
 
