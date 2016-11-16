@@ -2,9 +2,13 @@
 # 2016 General Public License V3
 # By Andrew Vavrek, Clayton G. Hobbs, Jezra
 
-from argparse import ArgumentParser, Namespace
 import logging
-#import signal
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)    
+
+
+from argparse import ArgumentParser, Namespace
+import signal
 import sys
 import subprocess
 
@@ -16,10 +20,6 @@ from core.util.language_updater import LanguageUpdater
 #from core.numbers import NumberParser
 #from core.recognizer import Recognizer
 #from core.util.hasher import Hasher
-
-
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger(__name__)    
 
 
 def _parser(args):
@@ -156,9 +156,6 @@ if __name__ == '__main__':
     #
     # Further patching to ease transition..
     #
-    # Update Language If Changed
-    #self.language_updater = LanguageUpdater(self.config)
-    #self.language_updater.update_language_if_changed()
 
     # Create Recognizer
     #self.recognizer = Recognizer(self.config)
