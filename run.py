@@ -13,7 +13,7 @@ import sys
 import subprocess
 
 
-#from gi.repository import GObject
+from gi.repository import GObject
 
 from core import Config, Assistant
 
@@ -58,6 +58,7 @@ def _parser(args):
 
 
 def recognizer_finished(a, recognizer, text):
+    logger.debug("Agent: {}, Recognier: {}, Text: {}".format(a, recognizer, text))
     t = text.lower()
     numt, nums = self.number_parser.parse_all_numbers(t)
     # Is There A Matching Command?
@@ -175,13 +176,13 @@ if __name__ == '__main__':
     # Questionable dependencies
     #
     # Initialize Gobject Threads
-    #GObject.threads_init()
+    GObject.threads_init()
 
     # Create Main Loop
-    #main_loop = GObject.MainLoop()
+    main_loop = GObject.MainLoop()
 
     # Handle Signal Interrupts
-    #signal.signal(signal.SIGINT, signal.SIG_DFL)
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
     #
     # End Questionable dependencies
     #
@@ -190,15 +191,15 @@ if __name__ == '__main__':
     #  maybe use threading module?
     #  could supplant GObject features
     #a.run()
-    #recognizer.listen()
+    recognizer.listen()
     
 
     # Start Main Loop
-    #try:
-    #    main_loop.run()
+    try:
+        main_loop.run()
 
-    #except Exception as e:
-    #    print(e)
-    #    main_loop.quit()
-    #    sys.exit()
+    except Exception as e:
+        print(e)
+        main_loop.quit()
+        sys.exit()
         
