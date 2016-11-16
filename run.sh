@@ -10,6 +10,11 @@
 ROOT=$( cd $(dirname $0) ; pwd -P )
 MINDDIR="$ROOT/mind/empty"
 
+export ASSISTNAME=$(hostname)
+export USERNAME=$(whoami)
+export BROWSER="firefox"
+export KEYPRESS="xvkbd -xsendevent -secure -text"
+export TERMINAL="tmux new-window "
 
 # Use system speech synthesizer on macOS
 if [[ "`uname`" == "Darwin" ]]
