@@ -12,10 +12,10 @@ import subprocess
 #from gi.repository import GObject
 
 from core import Config, Assistant
+from core.util.language_updater import LanguageUpdater
 #from core.numbers import NumberParser
 #from core.recognizer import Recognizer
 #from core.util.hasher import Hasher
-from core.util.language_updater import LanguageUpdater
 
 
 logging.basicConfig(level=logging.DEBUG)
@@ -148,11 +148,11 @@ if __name__ == '__main__':
     logger.debug("Arguments: {args}".format(args=args))
     conf = Config(path=args.mind_dir, **vars(args))
     
-    
+    # Build dictionary and language model
+    logger.debug("Creating Language Files")
     l = LanguageUpdater(conf)
     l.update_language()
     
-
     #
     # Further patching to ease transition..
     #
