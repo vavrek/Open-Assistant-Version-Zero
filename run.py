@@ -8,6 +8,7 @@ logger = logging.getLogger(__name__)
 
 
 from argparse import ArgumentParser, Namespace
+import os
 import signal
 import sys
 import subprocess
@@ -60,43 +61,43 @@ def _parser(args):
 def recognizer_finished(a, recognizer, text):
     logger.debug("Agent: {}, Recognier: {}, Text: {}".format(a, recognizer, text))
     t = text.lower()
-    numt, nums = self.number_parser.parse_all_numbers(t)
+    #numt, nums = self.number_parser.parse_all_numbers(t)
     # Is There A Matching Command?
-    if t in self.commands:
+    if t in a.config.commands:
         # Run The 'valid_sentence_command' If It's Set
         os.system('clear')
         print("Open Assistant: \x1b[32mListening\x1b[0m")
-        if self.config.options['valid_sentence_command']:
-            subprocess.call(self.config.options['valid_sentence_command'],
+        if a.config.options['valid_sentence_command']:
+            subprocess.call(a.config.options['valid_sentence_command'],
                             shell=True)
-        cmd = self.commands[t]
+        cmd = a.config.commands[t]
         # Should We Be Passing Words?
         os.system('clear')
         print("Open Assistant: \x1b[32mListening\x1b[0m")
-        if self.config.options['pass_words']:
+        if a.config.options['pass_words']:
             cmd += " " + t
         print("\x1b[32m< ! >\x1b[0m {0}".format(t))
-        self.run_command(cmd)
-        self.log_history(text)
-    elif numt in self.commands:
-        # Run 'valid_sentence_command' Set
-        os.system('clear')
-        print("Open Assistant: \x1b[32mListening\x1b[0m")
-        if self.config.options['valid_sentence_command']:
-            subprocess.call(self.config.options['valid_sentence_command'],
-                            shell=True)
-        cmd = self.commands[numt]
-        cmd = cmd.format(*nums)
-        # Should We Be Passing Words?
-        if self.config.options['pass_words']:
-            cmd += " " + t
-        print("\x1b[32m< ! >\x1b[0m {0}".format(t))
-        self.run_command(cmd)
-        self.log_history(text)
+        #run_command(cmd)
+        #log_history(text)
+    #elif numt in self.commands:
+    #    # Run 'valid_sentence_command' Set
+    #    os.system('clear')
+    #    print("Open Assistant: \x1b[32mListening\x1b[0m")
+    #    if self.config.options['valid_sentence_command']:
+    #        subprocess.call(self.config.options['valid_sentence_command'],
+    #                        shell=True)
+    #    cmd = self.commands[numt]
+    #    cmd = cmd.format(*nums)
+    #    # Should We Be Passing Words?
+    #    if self.config.options['pass_words']:
+    #        cmd += " " + t
+    #    print("\x1b[32m< ! >\x1b[0m {0}".format(t))
+    #    self.run_command(cmd)
+    #    self.log_history(text)
     else:
         # Run The Invalid_sentence_command If It's Set
-        if self.config.options['invalid_sentence_command']:
-            subprocess.call(self.config.options['invalid_sentence_command'],
+        if a.config.options['invalid_sentence_command']:
+            subprocess.call(a.config.options['invalid_sentence_command'],
                             shell=True)
         print("\x1b[31m< ? >\x1b[0m {0}".format(t))
         
