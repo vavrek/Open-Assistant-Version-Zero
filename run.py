@@ -160,9 +160,10 @@ if __name__ == '__main__':
     # Configure Language
     logger.debug("Configuring Module: Language")
     conf.strings_file = os.path.join(conf.cache_dir, "sentences.corpus")
-    conf.lang_file = os.path.join(conf.cache_dir, 'lm')
     conf.dic_file = os.path.join(conf.cache_dir, 'dic')
-    conf.fsg_file = None#os.path.join(conf.cache_dir, 'fsg')
+    conf.lang_file = os.path.join(conf.cache_dir, 'lm')
+    conf.fsg_file = None #os.path.join(conf.cache_dir, 'fsg')
+    # sphinx_jsgf2fsg < conf.jsgf_file > conf.fsg_file
     l = LanguageUpdater(conf)
     l.update_language()
     
