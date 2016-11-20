@@ -29,6 +29,7 @@ class Config:
         self.strings_file = os.path.join(self.cache_dir, "sentences.corpus")
         self.lang_file = os.path.join(self.cache_dir, 'lm')
         self.dic_file = os.path.join(self.cache_dir, 'dic')
+        self.fsg_file = os.path.join(self.cache_dir, 'fsg')
 
         self._make_dir(self.conf_dir)
         self._make_dir(self.cache_dir)
