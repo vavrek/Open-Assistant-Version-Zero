@@ -14,8 +14,6 @@ class Config:
         # DIRECTORIES
         self.cache_dir = os.path.join(path, 'cache')
         self.conf_dir = os.path.join(path, 'conf')
-        self.data_dir = os.path.join(path, 'words')
-        self.img_dir = os.path.join(path, 'images')
 
         # CONFIGURATION FILES
         self.opt_file = os.path.join(self.conf_dir, "settings.json")
@@ -27,7 +25,6 @@ class Config:
 
         self._make_dir(self.conf_dir)
         self._make_dir(self.cache_dir)
-        self._make_dir(self.data_dir)
         
         self.options = self._read_options_file()
         self.commands = self._read_commands_file()
