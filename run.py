@@ -19,7 +19,7 @@ from gi.repository import GObject
 from core import Config, Assistant
 
 from modules.language import LanguageUpdater
-from modules.speech_recognition import Recognizer
+from modules.speech_recognition.gst import Recognizer
 #from core.numbers import NumberParser
 
 
