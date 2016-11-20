@@ -42,8 +42,10 @@ class Recognizer(GObject.GObject):
             audio_src +
             ' ! audioconvert' +
             ' ! audioresample' +
-            ' ! pocketsphinx lm=' + config.lang_file + ' dict=' +
-            config.dic_file +
+            ' ! pocketsphinx lm={} dict={} fsg={}'.format(
+                config.lang_file,
+                config.dic_file,
+                config.fsg_file) +
             ' ! appsink sync=false'
         )
         try:
