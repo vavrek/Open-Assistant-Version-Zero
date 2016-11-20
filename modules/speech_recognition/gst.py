@@ -37,7 +37,7 @@ class Recognizer(GObject.GObject):
             ' ! pocketsphinx lm={} dict={} fsg={}'.format(
                 config.lang_file,
                 config.dic_file,
-                config.jsgf_file) +
+                config.fsg_file) +
             ' ! appsink sync=false'
         )
         try:
