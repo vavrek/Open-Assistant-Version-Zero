@@ -1,5 +1,4 @@
 {
     "hello": "echo hello | $VOICE",
-    "hello world": "echo hello world | $VOICE",
-	"super test": "echo ok, it worked | $VOICE"
+    "hello world": "echo hello world | $VOICE"
 }
