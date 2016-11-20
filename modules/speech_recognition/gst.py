@@ -8,6 +8,7 @@ GObject.threads_init()
 Gst.init(None)
 
 
+logger.debug("Loading")
 class Recognizer(GObject.GObject):
     __gsignals__ = {
         'finished' : (GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE,
@@ -34,12 +35,17 @@ class Recognizer(GObject.GObject):
             audio_src +
             ' ! audioconvert' +
             ' ! audioresample' +
-            ' ! pocketsphinx lm={} dict={} fsg={}'.format(
-                config.lang_file,
-                config.dic_file,
-                config.fsg_file) +
+            ' ! pocketsphinx {}'.format(' '.join([
+                    '{}={}'.format(opt, val) for opt, val in [
+                        ('lm', config.lang_file), 
+                        ('dict', config.dic_file),
+                        ('fsg', config.fsg_file)
+                    ] if val is not None
+                ])) +
             ' ! appsink sync=false'
         )
+        logger.debug(cmd)
+        
         try:
             self.pipeline = Gst.parse_launch(cmd)
         except Exception as e:
