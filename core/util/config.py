@@ -25,11 +25,6 @@ class Config:
         self.history_file = os.path.join(self.cache_dir, "history")
         self.hash_file = os.path.join(self.cache_dir, "hash.json")
 
-        # LANGUAGE FILES
-        self.strings_file = os.path.join(self.cache_dir, "sentences.corpus")
-        self.lang_file = os.path.join(self.cache_dir, 'lm')
-        self.dic_file = os.path.join(self.cache_dir, 'dic')
-
         self._make_dir(self.conf_dir)
         self._make_dir(self.cache_dir)
         self._make_dir(self.data_dir)
