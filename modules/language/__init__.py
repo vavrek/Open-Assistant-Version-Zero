@@ -96,7 +96,8 @@ class LanguageUpdater:
         lm_url = path + '/' + number + '.lm'
         dic_url = path + '/' + number + '.dic'
 
-        self._download_file(lm_url, self.config.lang_file)
+        if self.config.lang_file is not None:
+            self._download_file(lm_url, self.config.lang_file)
         self._download_file(dic_url, self.config.dic_file)
 
     # def save_language_hash(self):

@@ -19,7 +19,7 @@ from gi.repository import GObject
 from core import Config, Assistant
 
 from modules.language import LanguageUpdater
-from modules.speech_recognition import Recognizer
+from modules.speech_recognition.gst import Recognizer
 #from core.numbers import NumberParser
 
 
@@ -148,29 +148,38 @@ if __name__ == '__main__':
     #  command-line overrides config file
     args = _parser(sys.argv[1:])
     logger.debug("Arguments: {args}".format(args=args))
+
+
     conf = Config(path=args.mind_dir, **vars(args))
     
-    # A configured Assistant
-    a = Assistant(config=conf)
     
-
     #
     # Further patching to ease transition..
     #
-
-    # Build dictionary and language model
-    logger.debug("Module: Language")
+    
+    # Configure Language
+    logger.debug("Configuring Module: Language")
+    conf.strings_file = os.path.join(conf.cache_dir, "sentences.corpus")
+    conf.dic_file = os.path.join(conf.cache_dir, 'dic')
+    conf.lang_file = os.path.join(conf.cache_dir, 'lm')
+    conf.fsg_file = None #os.path.join(conf.cache_dir, 'fsg')
+    # sphinx_jsgf2fsg < conf.jsgf_file > conf.fsg_file
     l = LanguageUpdater(conf)
     l.update_language()
     
-    # Create Recognizer
-    logger.debug("Module: Speech Recognition")
+    # Configure Recognizer
+    logger.debug("Configuring Module: Speech Recognition")
     recognizer = Recognizer(conf)
-    recognizer.connect('finished', lambda rec, txt, agent=a: recognizer_finished(agent, rec, txt))
 
     #
     # End patching
     #
+    
+
+    # A configured Assistant
+    a = Assistant(config=conf)
+    
+    recognizer.connect('finished', lambda rec, txt, agent=a: recognizer_finished(agent, rec, txt))
         
     
     #
