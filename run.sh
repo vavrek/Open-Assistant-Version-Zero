@@ -8,8 +8,8 @@
 
 # Environment Configuration
 ROOT=$( cd $(dirname $0) ; pwd -P )
-MINDDIR="$ROOT/mind/empty"
 
+export MINDDIR="$ROOT/mind/stella"
 export ASSISTNAME=$(hostname)
 export USERNAME=$(whoami)
 export BROWSER="firefox"

@@ -3,7 +3,7 @@
 # By Andrew Vavrek, Clayton G. Hobbs, Jezra
 
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.CRITICAL)
 logger = logging.getLogger(__name__)    
 
 
@@ -21,7 +21,6 @@ from core import Config, Assistant
 from modules.language import LanguageUpdater
 from modules.speech_recognition.gst import Recognizer
 #from core.numbers import NumberParser
-
 
 def _parser(args):
     parser = ArgumentParser()
@@ -118,9 +117,9 @@ def log_history(a, text):
 def run_command(a, cmd):
     """PRINT COMMAND AND RUN"""
     print("\x1b[32m< ! >\x1b[0m", cmd)
-    #self.recognizer.pause()
+    recognizer.pause()
     subprocess.call(cmd, shell=True)
-    #self.recognizer.listen()
+    recognizer.listen()
 
     
 def process_command(self, command):
