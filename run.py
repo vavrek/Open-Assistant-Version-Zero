@@ -64,7 +64,7 @@ def _parser(args):
 def recognizer_finished(a, recognizer, text):
     logger.debug("Agent: {}, Recognier: {}, Text: {}".format(a, recognizer, text))
     t = text.lower()
-    #numt, nums = self.number_parser.parse_all_numbers(t)
+    
     # Is There A Matching Command?
     if t in a.config.commands:
         # Run The 'valid_sentence_command' If It's Set
@@ -81,22 +81,7 @@ def recognizer_finished(a, recognizer, text):
             cmd += " " + t
         print("\x1b[32m< ! >\x1b[0m {0}".format(t))
         run_command(a, cmd)
-        log_history(a, text)
-    #elif numt in self.commands:
-    #    # Run 'valid_sentence_command' Set
-    #    os.system('clear')
-    #    print("Open Assistant: \x1b[32mListening\x1b[0m")
-    #    if self.config.options['valid_sentence_command']:
-    #        subprocess.call(self.config.options['valid_sentence_command'],
-    #                        shell=True)
-    #    cmd = self.commands[numt]
-    #    cmd = cmd.format(*nums)
-    #    # Should We Be Passing Words?
-    #    if self.config.options['pass_words']:
-    #        cmd += " " + t
-    #    print("\x1b[32m< ! >\x1b[0m {0}".format(t))
-    #    self.run_command(cmd)
-    #    self.log_history(text)
+
     else:
         # Run The Invalid_sentence_command If It's Set
         if a.config.options['invalid_sentence_command']:
@@ -105,42 +90,12 @@ def recognizer_finished(a, recognizer, text):
         print("\x1b[31m< ? >\x1b[0m {0}".format(t))
         
 
-def log_history(a, text):
-    if a.config.options['history']:
-        a.history.append(text)
-        if len(a.history) > a.config.options['history']:
-            # Pop Off First Item
-            a.history.pop(0)
-
-        # Open And Truncate History File
-        with open(a.config.history_file, 'w') as hfile:
-            for line in a.history:
-                hfile.write(line + '\n')
-                
-
 def run_command(a, cmd):
     """PRINT COMMAND AND RUN"""
     print("\x1b[32m< ! >\x1b[0m", cmd)
     recognizer.pause()
     subprocess.call(cmd, shell=True)
     recognizer.listen()
-
-    
-def process_command(self, command):
-    print(command)
-    if command == "listen":
-        self.recognizer.listen()
-    elif command == "stop":
-        self.recognizer.pause()
-    elif command == "continuous_listen":
-        self.continuous_listen = True
-        self.recognizer.listen()
-    elif command == "continuous_stop":
-        self.continuous_listen = False
-        self.recognizer.pause()
-    elif command == "quit":
-        self.quit()
-
 
 
 
