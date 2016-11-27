@@ -36,7 +36,7 @@ def _parser(args):
 
     parser.add_argument("-H", "--history", type=int,
             action="store", dest="history",
-            help="Number of commands to store in history file")
+            help="Number of commands to store in history file", metavar="HISTORY_SIZE")
 
     parser.add_argument("-m", "--microphone", type=int,
             action="store", dest="microphone", default=None,
@@ -44,15 +44,19 @@ def _parser(args):
 
     parser.add_argument("--valid-sentence-command", type=str,
             dest="valid_sentence_command", action='store',
-            help="Command to run when a valid sentence is detected")
+            help="Command to run when a valid sentence is detected", metavar="COMMAND_PATH")
 
     parser.add_argument("--invalid-sentence-command", type=str,
             dest="invalid_sentence_command", action='store',
-            help="Command to run when an invalid sentence is detected")
+            help="Command to run when an invalid sentence is detected", metavar="COMMAND_PATH")
             
     parser.add_argument("-M", "--mind", type=str,
             dest="mind_dir", action='store',
-            help="Path to mind to use for assistant")
+            help="Path to mind to use for assistant", metavar="MIND_DIR")
+            
+    parser.add_argument("-d", "--debug",
+            action='store_true', dest="debug", default=False,
+            help="Enable debug-level logging")
 
     return parser.parse_args(args)
 
@@ -146,6 +150,8 @@ if __name__ == '__main__':
     #  use `Config` to load mind configuration
     #  command-line overrides config file
     args = _parser(sys.argv[1:])
+    if args.debug:
+        logging.root.setLevel(logging.DEBUG)
     logger.debug("Arguments: {args}".format(args=args))
 
 
