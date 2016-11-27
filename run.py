@@ -162,7 +162,7 @@ if __name__ == '__main__':
     conf.dic_file = os.path.join(conf.cache_dir, 'dic')
     conf.lang_file = os.path.join(conf.cache_dir, 'lm')
     conf.fsg_file = None #os.path.join(conf.cache_dir, 'fsg')
-    # sphinx_jsgf2fsg < conf.jsgf_file > conf.fsg_file
+
     l = LanguageUpdater(conf)
     l.update_language()
     
