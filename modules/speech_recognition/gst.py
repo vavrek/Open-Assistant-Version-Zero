@@ -17,7 +17,6 @@ class Recognizer(GObject.GObject):
 
     def __init__(self, config):
         GObject.GObject.__init__(self)
-        self.commands = {}
         logger.debug("Initializing Recognizer")
         logger.debug(config)
         logger.debug(config.options)
