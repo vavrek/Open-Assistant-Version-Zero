@@ -36,7 +36,7 @@ class Recognizer(GObject.GObject):
             ' ! audioresample' +
             ' ! pocketsphinx {}'.format(' '.join([
                     '{}={}'.format(opt, val) for opt, val in [
-                        ('lm', config.lang_file), 
+                        ('lm', config.lm_file), 
                         ('dict', config.dic_file),
                         ('fsg', config.fsg_file)
                     ] if val is not None

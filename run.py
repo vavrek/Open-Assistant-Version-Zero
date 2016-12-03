@@ -18,9 +18,9 @@ from gi.repository import GObject
 
 from core import Config, Assistant
 
-from modules.language import LanguageUpdater
+from modules.language import create_strings_file, create_sphinx_files
 from modules.speech_recognition.gst import Recognizer
-#from core.numbers import NumberParser
+
 
 def _parser(args):
     parser = ArgumentParser()
@@ -114,33 +114,46 @@ if __name__ == '__main__':
     
     
     #
-    # Further patching to ease transition..
+    # Pre-Configuration
     #
     
     # Configure Language
     logger.debug("Configuring Module: Language")
+
+    # Language Paths
     conf.strings_file = os.path.join(conf.cache_dir, "sentences.corpus")
     conf.dic_file = os.path.join(conf.cache_dir, 'dic')
-    conf.lang_file = os.path.join(conf.cache_dir, 'lm')
+    conf.lm_file = os.path.join(conf.cache_dir, 'lm')
     conf.fsg_file = None #os.path.join(conf.cache_dir, 'fsg')
 
-    l = LanguageUpdater(conf)
-    l.update_language()
+    # Generate Language Files
+    create_strings_file(conf.strings_file, conf.commands)
+    create_sphinx_files(conf.strings_file, conf.lm_file, conf.dic_file)
     
     # Configure Recognizer
     logger.debug("Configuring Module: Speech Recognition")
     recognizer = Recognizer(conf)
 
     #
-    # End patching
+    # End Pre-Configuration
     #
     
 
     # A configured Assistant
     a = Assistant(config=conf)
     
+    
+    #
+    # Post-Configuration
+    #
+    
     recognizer.connect('finished', lambda rec, txt, agent=a: recognizer_finished(agent, rec, txt))
-        
+    
+    #
+    # End Post-Configuration
+    #
+    
+    
     
     #
     # Questionable dependencies
