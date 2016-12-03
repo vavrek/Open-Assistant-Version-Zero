@@ -21,7 +21,7 @@ def create_strings_file(path, source={}):
     # Open Strings File
     with open(path, 'w+') as strings:
         # Add Command Words To The Corpus
-        for cmd in sorted(source.keys()):
+        for cmd in source:
             strings.write(cmd.strip().replace('%d', '') + "\n")
     
 

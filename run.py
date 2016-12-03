@@ -21,6 +21,8 @@ from core import Config, Assistant
 from modules.language import create_strings_file, create_sphinx_files
 from modules.speech_recognition.gst import Recognizer
 
+from core.util.db import DB
+
 
 def _parser(args):
     parser = ArgumentParser()
@@ -65,13 +67,14 @@ def recognizer_finished(a, recognizer, text):
     logger.debug("Agent: {}, Recognier: {}, Text: {}".format(a, recognizer, text))
     t = text.lower()
     
+    cmd = a.db.get_action(t)
+    
     # Is There A Matching Command?
-    if t in a.config.commands:
+    if cmd is not None:
         # Run The 'valid_sentence_command' If It's Set
         os.system('clear')
         if a.config.options['valid_sentence_command']:
             subprocess.call([a.config.options['valid_sentence_command'], text])
-        cmd = a.config.commands[t]
         # Should We Be Passing Words?
         #os.system('clear')
         if a.config.options['pass_words']:
@@ -106,8 +109,13 @@ if __name__ == '__main__':
         logging.root.setLevel(logging.DEBUG)
     logger.debug("Arguments: {args}".format(args=args))
 
-
     conf = Config(path=args.mind_dir, **vars(args))
+
+    db = DB(os.path.join(conf.conf_dir, "db"))    
+    db.create_schema()
+    for prompt, command in conf.commands.items():
+        print("Adding {} -> {}".format(prompt, command))
+        db.add_action(prompt, command)
     
     
     #
@@ -124,7 +132,7 @@ if __name__ == '__main__':
     conf.fsg_file = None #os.path.join(conf.cache_dir, 'fsg')
 
     # Generate Language Files
-    create_strings_file(conf.strings_file, conf.commands)
+    create_strings_file(conf.strings_file, db.get_prompts()) # conf.commands)
     create_sphinx_files(conf.strings_file, conf.lm_file, conf.dic_file)
     
     # Configure Recognizer
@@ -138,6 +146,7 @@ if __name__ == '__main__':
 
     # A configured Assistant
     a = Assistant(config=conf)
+    a.db = db
     
     
     #
