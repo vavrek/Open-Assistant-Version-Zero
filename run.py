@@ -43,11 +43,11 @@ def _parser(args):
             help="Audio input card to use (if other than system default)")
 
     parser.add_argument("--valid-sentence-command", type=str,
-            dest="valid_sentence_command", action='store',
+            dest="valid_sentence_command", action='store', default=None,
             help="Command to run when a valid sentence is detected", metavar="COMMAND_PATH")
 
     parser.add_argument("--invalid-sentence-command", type=str,
-            dest="invalid_sentence_command", action='store',
+            dest="invalid_sentence_command", action='store', default=None,
             help="Command to run when an invalid sentence is detected", metavar="COMMAND_PATH")
             
     parser.add_argument("-M", "--mind", type=str,
@@ -69,24 +69,21 @@ def recognizer_finished(a, recognizer, text):
     if t in a.config.commands:
         # Run The 'valid_sentence_command' If It's Set
         os.system('clear')
-        print("Open Assistant: \x1b[32mListening\x1b[0m")
         if a.config.options['valid_sentence_command']:
-            subprocess.call(a.config.options['valid_sentence_command'],
-                            shell=True)
+            subprocess.call([a.config.options['valid_sentence_command'], text])
         cmd = a.config.commands[t]
         # Should We Be Passing Words?
-        os.system('clear')
-        print("Open Assistant: \x1b[32mListening\x1b[0m")
+        #os.system('clear')
         if a.config.options['pass_words']:
             cmd += " " + t
-        print("\x1b[32m< ! >\x1b[0m {0}".format(t))
+        print("\x1b[32m< ? >\x1b[0m {0}".format(t))
         run_command(a, cmd)
 
     else:
         # Run The Invalid_sentence_command If It's Set
+        logger.debug("Unrecognized command: {}".format(t))
         if a.config.options['invalid_sentence_command']:
-            subprocess.call(a.config.options['invalid_sentence_command'],
-                            shell=True)
+            subprocess.call([a.config.options['invalid_sentence_command'], text])
         print("\x1b[31m< ? >\x1b[0m {0}".format(t))
         
 
@@ -132,7 +129,7 @@ if __name__ == '__main__':
     
     # Configure Recognizer
     logger.debug("Configuring Module: Speech Recognition")
-    recognizer = Recognizer(conf)
+    recognizer = Recognizer(args.microphone, dic_file=conf.dic_file, lm_file=conf.lm_file)
 
     #
     # End Pre-Configuration
