@@ -1,0 +1,4 @@
+{
+  "hello boot": "aplay ./mind/boot/sounds/beep_hello.wav",
+  "open assistant": "aplay ./mind/boot/sounds/beep_open.wav && ./run.sh -c -H20 -m1 -M mind/root_arch"
+}

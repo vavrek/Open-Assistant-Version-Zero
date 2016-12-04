@@ -4,20 +4,18 @@
 # 2016 General Public License V3
 # By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
 
-# assist.sh - Assistant Launch Script
+# run.sh - Open Assistant Launch Script
 
 # Environment Configuration
-ROOT=$( cd $(dirname $0) ; pwd -P )
-
-export MINDDIR="$ROOT/mind/stella"
-export ASSISTNAME=$(hostname)
 export USERNAME=$(whoami)
+export ROOT=$( cd $(dirname $0) ; pwd -P )
+export MINDDIR="$ROOT/mind/boot"
 export BROWSER="firefox"
 export KEYPRESS="xvkbd -xsendevent -secure -text"
 export TERMINAL="tmux new-window "
 
 # Use system speech synthesizer on macOS
-if [[ "`uname`" == "Darwin" ]]
+if [[ "uname" == "Darwin" ]]
 then
 	export VOICE="say"
 else

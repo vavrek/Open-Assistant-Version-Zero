@@ -6,7 +6,7 @@
 
 # no.sh
 
-TOPIC=$(echo $(cat $MINDDIR/words/topic))
+TOPIC=$(echo $(cat ./mind/stella/words/topic))
 
 if [ $TOPIC = "diagnostics" ]; then
 	echo "ok... no diagnostics..." | $VOICE

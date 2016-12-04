@@ -1,0 +1,9 @@
+{
+	"continuous": false,
+	"history": true,
+	"microphone": true,
+	"interface": null,
+	"pass_words": false,
+	"valid_sentence_command": false,
+	"invalid_sentence_command": false
+}
