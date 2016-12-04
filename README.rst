@@ -51,9 +51,11 @@ Running OpenAssistant
 
 * Say `Launch Open Assistant` to enable operating system control commands such as `Maximize Window` and `Fullscreen`. Say `Launch Stella` to initiate a dialogue with her mind. To have Stella quit say `Goodbye Stella`. Say `Close Open Assistant` to quit operating system command recognition.
 
-* To change assistant commands and language, edit ``$MINDDIR/conf/commands.json``. Exit and relaunch ``run.sh``.
+* To change assistant commands and language, edit ``conf/commands.json``. Exit and relaunch ``run.sh``.
 
-* For help, you can receive support in the `OpenAssistant Forum <http://openassistant.org/community/>`_.
+* For usage instructions, check out the `Open Assistant Wiki <http://openassistant.org/wiki/>`_.
+
+* For help, you can receive support in the `Open Assistant Forum <http://openassistant.org/community/>`_.
 
 
 Next Steps
