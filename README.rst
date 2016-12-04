@@ -28,7 +28,6 @@ Useful Tools
 ------------
 
 * aplay - console audio player
-* pamixer - portaudio volume control
 * plaympeg - console mp3 player
 * projectm - visualizations responsive to sound
 * wmctrl - window manager control. opening, closing, resize, switch windows. 
@@ -46,13 +45,11 @@ Running OpenAssistant
 
 * Make ``run.sh`` executable with: ``$chmod +x ./run.sh``
 
-* Run ``./run.sh -c -H20 -m0 -M mind/stella``. Global variables will be set and ``run.py`` will launch.
+* Run ``./run.sh -c -H20 -m0 -M mind/boot``. Global variables will be set and ``run.py`` will launch.
 
 * If ``$MINDDIR/conf/commands.json`` has changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
 
-* Say "Hello!" :) To mute, say "Be quiet" or "Silence". To unmute, say "Talk to me". 
-
-* To quit, say "Goodbye" or "Farewell."
+* Say `Launch Open Assistant` to enable operating system control commands such as `Maximize Window` and `Fullscreen`. Say `Launch Stella` to initiate a dialogue with her mind. To have Stella quit say `Goodbye Stella`. Say `Close Open Assistant` to quit operating system command recognition.
 
 * To change assistant commands and language, edit ``$MINDDIR/conf/commands.json``. Exit and relaunch ``run.sh``.
 
@@ -92,5 +89,5 @@ Join our development working group at: http://www.openassistant.org
 Open Assistant Fork
 ==================
 
-Open Assistant fork for crux system, for more information read;
+Open Assistant fork for Crux System:
 https://github.com/s1lvino/c9-ports/tree/master/openassistant
