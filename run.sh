@@ -27,4 +27,4 @@ fi
 # 	-H 20	With HistoryLength 20
 # 	-m 0	With InputDevice 0
 #	--mind "$MINDDIR"
-python3.5 "$ROOT/run.py" $@
+python3 "$ROOT/run.py" $@
