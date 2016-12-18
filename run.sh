@@ -15,11 +15,13 @@ export KEYPRESS="xvkbd -xsendevent -secure -text"
 export TERMINAL="tmux new-window "
 
 # Use system speech synthesizer on macOS
-if [ "$(uname)" != 'Darwin' ]
+if [ "$(uname)" = 'Darwin' ]
 then
-        export VOICE="/usr/bin/festival --tts"
-else
+        #Mac OSX
         export VOICE="say"
+else
+        #Not Mac OSX, assume linux
+        export VOICE="/usr/bin/festival --tts"
 fi
 
 # Launch OpenAssistant
