@@ -15,7 +15,7 @@ export KEYPRESS="xvkbd -xsendevent -secure -text"
 export TERMINAL="tmux new-window "
 
 # Use system speech synthesizer on macOS
-if [ "$(whoami)" != 'Darwin' ]
+if [ "$(uname)" != 'Darwin' ]
 then
         export VOICE="/usr/bin/festival --tts"
 else
