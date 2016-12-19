@@ -111,7 +111,7 @@ if __name__ == '__main__':
 
     conf = Config(path=args.mind_dir, **vars(args))
 
-    db = DB(os.path.join(conf.conf_dir, "db"))    
+    db = DB(os.path.join(conf.cache_dir, "db"))    
     db.create_schema()
     for prompt, command in conf.commands.items():
         print("Adding {} -> {}".format(prompt, command))
