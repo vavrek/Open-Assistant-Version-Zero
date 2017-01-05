@@ -59,6 +59,10 @@ def _parser(args):
     parser.add_argument("-d", "--debug",
             action='store_true', dest="debug", default=False,
             help="Enable debug-level logging")
+            
+    parser.add_argument("-u", "--update",
+            action='store_true', dest="update", default=False,
+            help="Update language files online")
 
     return parser.parse_args(args)
 
@@ -132,8 +136,9 @@ if __name__ == '__main__':
     conf.fsg_file = None #os.path.join(conf.cache_dir, 'fsg')
 
     # Generate Language Files
-    create_strings_file(conf.strings_file, db.get_prompts()) # conf.commands)
-    create_sphinx_files(conf.strings_file, conf.lm_file, conf.dic_file)
+    if args.update:
+        create_strings_file(conf.strings_file, db.get_prompts()) # conf.commands)
+        create_sphinx_files(conf.strings_file, conf.lm_file, conf.dic_file)
     
     # Configure Recognizer
     logger.debug("Configuring Module: Speech Recognition")
