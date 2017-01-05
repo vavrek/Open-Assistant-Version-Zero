@@ -36,8 +36,9 @@ Useful Tools
 
 Running OpenAssistant
 ---------------------
+* The latest documentation can be found on our wiki at http://openassistant.org/wiki/
 
-* Install dependencies and tools.
+* Install dependencies and tools. Please see http://openassistant.org/wiki/doku.php?id=installation
 
 * Download and unpack the latest ``openassistant-master.zip`` package.
 
@@ -53,7 +54,7 @@ Running OpenAssistant
 
 * To change assistant commands and language, edit ``conf/commands.json``. Exit and relaunch ``run.sh``.
 
-* For usage instructions, check out the `Open Assistant Wiki <http://openassistant.org/wiki/>`_.
+* For usage instructions, check out the `Open Assistant Wiki <http://openassistant.org/wiki/doku.php?id=usage>`_.
 
 * For help, you can receive support in the `Open Assistant Forum <http://openassistant.org/community/>`_.
 
@@ -86,6 +87,7 @@ Join Us!
 --------
 
 Join our development working group at: http://www.openassistant.org
+Developers: here's a quick start guide: http://openassistant.org/wiki/doku.php?id=developers
 
 
 Open Assistant Fork

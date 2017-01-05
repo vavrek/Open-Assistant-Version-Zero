@@ -15,11 +15,13 @@ export KEYPRESS="xvkbd -xsendevent -secure -text"
 export TERMINAL="tmux new-window "
 
 # Use system speech synthesizer on macOS
-if [[ "uname" == "Darwin" ]]
+if [ "$(uname)" = 'Darwin' ]
 then
-	export VOICE="say"
+        #Mac OSX
+        export VOICE="say"
 else
-	export VOICE="/usr/bin/festival --tts"
+        #Not Mac OSX, assume linux
+        export VOICE="/usr/bin/festival --tts"
 fi
 
 # Launch OpenAssistant
@@ -27,4 +29,4 @@ fi
 # 	-H 20	With HistoryLength 20
 # 	-m 0	With InputDevice 0
 #	--mind "$MINDDIR"
-python3.5 "$ROOT/run.py" $@
+python3 "$ROOT/run.py" $@
