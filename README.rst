@@ -36,11 +36,8 @@ Useful Tools
 * xdotool - command line x automation tool
 * xvkbd - virtual keyboard for x
 
-Running OpenAssistant
+Running Open Assistant
 ---------------------
-* The latest documentation can be found on our wiki at http://openassistant.org/wiki/
-
-* Install dependencies and tools. Please see http://openassistant.org/wiki/doku.php?id=installation
 
 * Download and unpack the latest ``openassistant-master.zip`` package.
 
@@ -64,32 +61,9 @@ Running OpenAssistant
 Next Steps
 ----------
 
-* Port Open Assistant to multiple Linux distributions, beginning with Ubuntu
-
-* Enable dynamic voice and instant name changes via spoken commands
-
-* Configure syntax and actions via spoken commands
-
-* Install internal language model translation
-
-* Improve speech recognition and synthesis
-
-* Long-term memory & machine learning
-
-* Web scraping & information analysis
-
-* Establish multiple default 'personalities' and plug-in functions
-
-* Port Open Assistant to all operating systems and devices
+* Open Assistant is now supporting `Mycroft <https://github.com/MycroftAI>`__.
 
 * Galactic Exploration!
-
-
-Join Us!
---------
-
-Join our development working group at: http://www.openassistant.org
-Developers: here's a quick start guide: http://openassistant.org/wiki/doku.php?id=developers
 
 
 Open Assistant Fork
