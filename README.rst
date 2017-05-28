@@ -11,6 +11,8 @@ by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee
 by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work 
 done by `Jonathan Kulp <http://jonathankulp.org/>`__.
 
+Open Assistant is now supporting `Mycroft <https://github.com/MycroftAI>`__.
+
 
 Dependencies
 ------------
