@@ -1,14 +1,14 @@
 Open Assistant
 =============
 
-Open Assistant is an evolving open source artificial intelligence agent able 
+Open Assistant is an evolving open source artificial intelligence agent able
 to interact in basic conversation and automate an increasing number of tasks.
 
-Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
-working group lead by `Andrew Vavrek <https://youtu.be/cXqEv2OVwHE>`__, this software 
-is an extension of `Blather <https://gitlab.com/jezra/blather>`__ 
-by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee>`__ 
-by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work 
+Maintained by the `Open Assistant <http://www.openassistant.org/>`__
+working group lead by `Andrew Vavrek <https://youtu.be/cXqEv2OVwHE>`__, this software
+is an extension of `Blather <https://gitlab.com/jezra/blather>`__
+by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee>`__
+by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work
 done by `Jonathan Kulp <http://jonathankulp.org/>`__.
 
 
@@ -30,15 +30,12 @@ Useful Tools
 * aplay - console audio player
 * plaympeg - console mp3 player
 * projectm - visualizations responsive to sound
-* wmctrl - window manager control. opening, closing, resize, switch windows. 
+* wmctrl - window manager control. opening, closing, resize, switch windows.
 * xdotool - command line x automation tool
 * xvkbd - virtual keyboard for x
 
-Running OpenAssistant
+Running Open Assistant
 ---------------------
-* The latest documentation can be found on our wiki at http://openassistant.org/wiki/
-
-* Install dependencies and tools. Please see http://openassistant.org/wiki/doku.php?id=installation
 
 * Download and unpack the latest ``openassistant-master.zip`` package.
 
@@ -53,41 +50,6 @@ Running OpenAssistant
 * Say `Launch Open Assistant` to enable operating system control commands such as `Maximize Window` and `Fullscreen`. Say `Launch Stella` to initiate a dialogue with her mind. To have Stella quit say `Goodbye Stella`. Say `Close Open Assistant` to quit operating system command recognition.
 
 * To change assistant commands and language, edit ``conf/commands.json``. Exit and relaunch ``run.sh``.
-
-* For usage instructions, check out the `Open Assistant Wiki <http://openassistant.org/wiki/doku.php?id=usage>`_.
-
-* For help, you can receive support in the `Open Assistant Forum <http://openassistant.org/community/>`_.
-
-
-Next Steps
-----------
-
-* Port Open Assistant to multiple Linux distributions, beginning with Ubuntu
-
-* Enable dynamic voice and instant name changes via spoken commands
-
-* Configure syntax and actions via spoken commands
-
-* Install internal language model translation
-
-* Improve speech recognition and synthesis
-
-* Long-term memory & machine learning
-
-* Web scraping & information analysis
-
-* Establish multiple default 'personalities' and plug-in functions
-
-* Port Open Assistant to all operating systems and devices
-
-* Galactic Exploration!
-
-
-Join Us!
---------
-
-Join our development working group at: http://www.openassistant.org
-Developers: here's a quick start guide: http://openassistant.org/wiki/doku.php?id=developers
 
 
 Open Assistant Fork
