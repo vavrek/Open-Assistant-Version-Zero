@@ -10,7 +10,7 @@ class Config:
 
     def __init__(self, path=None, **opts):
         logger.info("Loading Mind: {path}".format(path=path))
-        
+
         # DIRECTORIES
         self.cache_dir = os.path.join(path, 'cache')
         self.conf_dir = os.path.join(path, 'conf')
@@ -21,15 +21,16 @@ class Config:
 
         # CACHE FILES
         self.history_file = os.path.join(self.cache_dir, "history")
+        self.hash_file = os.path.join(self.cache_dir, "hash.json")
 
         self._make_dir(self.conf_dir)
         self._make_dir(self.cache_dir)
-        
+
         self.options = self._read_options_file()
         self.options.update(opts)
         logger.info("Options: {}".format(self.options))
-        
-        self.commands = self._read_commands_file()        
+
+        self.commands = self._read_commands_file()
         logger.info("Command Count: {}".format(len(self.commands)))
 
 
@@ -45,6 +46,7 @@ class Config:
                 _options = json.load(f)
                 return _options
         except FileNotFoundError:
+            # MAKE AN EMPTY OPTIONS NAMESPACE
             logger.warn("Error reading options file: {path}".format(path=self.opt_file))
             return {}
 
@@ -56,5 +58,6 @@ class Config:
                 _cmds = json.load(f)
                 return _cmds
         except FileNotFoundError:
+            # MAKE AN EMPTY COMMANDS NAMESPACE
             logger.warn("Error reading commands file: {path}".format(path=self.cmd_file))
             return {}

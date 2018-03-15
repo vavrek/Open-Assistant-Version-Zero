@@ -15,12 +15,21 @@ class Recognizer(GObject.GObject):
                       (GObject.TYPE_STRING,))
     }
 
-    def __init__(self, mic=None, dic_file=None, lm_file=None, fsg_file=None):
+    # def __init__(self, mic=None, dic_file=None, lm_file=None, fsg_file=None):
+    def __init__(self, config):
         GObject.GObject.__init__(self)
         logger.debug("Initializing Recognizer")
+        self.commands = {}
+        logger.debug(config)
+        logger.debug(config.options)
 
         # Configure Audio Source
-        audio_src = 'autoaudiosrc' + ('' if mic is None else ' device="hw:{0},0"'.format(mic))
+        src = config.options['microphone']
+        if src is not None:
+            #audio_src = 'alsasrc device="hw:{0},0"'.format(src)
+            audio_src = 'autoaudiosrc device="hw:{0},0"'.format(src)
+        else:
+            audio_src = 'autoaudiosrc'
 
         # Build Pipeline
         cmd = (
@@ -29,15 +38,16 @@ class Recognizer(GObject.GObject):
             ' ! audioresample' +
             ' ! pocketsphinx {}'.format(' '.join([
                     '{}={}'.format(opt, val) for opt, val in [
-                        ('dict', dic_file),
-                        ('lm', lm_file), 
-                        ('fsg', fsg_file)
+                        ('lm', config.lang_file),
+                        ('dict', config.dic_file),
+                        ('fsg', config.fsg_file),
+                        ('hmm', config.hmm_path),
                     ] if val is not None
                 ])) +
             ' ! appsink sync=false'
         )
         logger.debug(cmd)
-        
+
         try:
             self.pipeline = Gst.parse_launch(cmd)
         except Exception as e:
