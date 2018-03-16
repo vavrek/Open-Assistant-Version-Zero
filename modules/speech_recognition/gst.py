@@ -15,16 +15,17 @@ class Recognizer(GObject.GObject):
                       (GObject.TYPE_STRING,))
     }
 
+    # def __init__(self, mic=None, dic_file=None, lm_file=None, fsg_file=None):
     def __init__(self, config):
         GObject.GObject.__init__(self)
-        self.commands = {}
         logger.debug("Initializing Recognizer")
+        self.commands = {}
         logger.debug(config)
         logger.debug(config.options)
 
         # Configure Audio Source
         src = config.options['microphone']
-        if src:
+        if src is not None:
             #audio_src = 'alsasrc device="hw:{0},0"'.format(src)
             audio_src = 'autoaudiosrc device="hw:{0},0"'.format(src)
         else:
@@ -37,15 +38,16 @@ class Recognizer(GObject.GObject):
             ' ! audioresample' +
             ' ! pocketsphinx {}'.format(' '.join([
                     '{}={}'.format(opt, val) for opt, val in [
-                        ('lm', config.lang_file), 
+                        ('lm', config.lang_file),
                         ('dict', config.dic_file),
-                        ('fsg', config.fsg_file)
+                        ('fsg', config.fsg_file),
+                        ('hmm', config.hmm_path),
                     ] if val is not None
                 ])) +
             ' ! appsink sync=false'
         )
         logger.debug(cmd)
-        
+
         try:
             self.pipeline = Gst.parse_launch(cmd)
         except Exception as e:
@@ -59,9 +61,11 @@ class Recognizer(GObject.GObject):
         bus.connect('message::element', self.result)
 
     def listen(self):
+        logger.debug("\x1b[32mListening\x1b[0m")
         self.pipeline.set_state(Gst.State.PLAYING)
 
     def pause(self):
+        logger.debug("\x1b[31mPaused\x1b[0m")
         self.pipeline.set_state(Gst.State.PAUSED)
 
     def result(self, bus, msg):
@@ -74,4 +78,5 @@ class Recognizer(GObject.GObject):
         # If We Have A Final Command, Send It For Processing
         command = msg_struct.get_string('hypothesis')
         if command != '' and msg_struct.get_boolean('final')[1]:
+            logger.debug("Heard: {}".format(command))
             self.emit("finished", command)

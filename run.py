@@ -4,23 +4,16 @@
 
 import logging
 logging.basicConfig(level=logging.CRITICAL)
-logger = logging.getLogger(__name__)    
+logger = logging.getLogger(__name__)
 
 
-from argparse import ArgumentParser, Namespace
 import os
 import signal
 import sys
 import subprocess
 
 
-from gi.repository import GObject
-
-from core import Config, Assistant
-
-from modules.language import LanguageUpdater
-from modules.speech_recognition.gst import Recognizer
-#from core.numbers import NumberParser
+from argparse import ArgumentParser, Namespace
 
 def _parser(args):
     parser = ArgumentParser()
@@ -31,8 +24,7 @@ def _parser(args):
 
     parser.add_argument("-p", "--pass-words",
             action="store_true", dest="pass_words", default=False,
-            help="Pass the recognized words as arguments to the shell" +
-            " command")
+            help="Pass the recognized words as arguments to the shell command")
 
     parser.add_argument("-H", "--history", type=int,
             action="store", dest="history",
@@ -43,16 +35,24 @@ def _parser(args):
             help="Audio input card to use (if other than system default)")
 
     parser.add_argument("--valid-sentence-command", type=str,
-            dest="valid_sentence_command", action='store',
+            dest="valid_sentence_command", action='store', default=None,
             help="Command to run when a valid sentence is detected")
 
     parser.add_argument("--invalid-sentence-command", type=str,
-            dest="invalid_sentence_command", action='store',
+            dest="invalid_sentence_command", action='store', default=None,
             help="Command to run when an invalid sentence is detected")
-            
+
     parser.add_argument("-M", "--mind", type=str,
             dest="mind_dir", action='store',
             help="Path to mind to use for assistant")
+
+    parser.add_argument("-d", "--debug",
+            action='store_true', dest="debug", default=False,
+            help="Enable debug-level logging")
+
+    parser.add_argument("-u", "--update",
+            action='store_true', dest="update", default=False,
+            help="Update language files online")
 
     return parser.parse_args(args)
 
@@ -60,15 +60,29 @@ def _parser(args):
 def recognizer_finished(a, recognizer, text):
     logger.debug("Agent: {}, Recognier: {}, Text: {}".format(a, recognizer, text))
     t = text.lower()
-    #numt, nums = self.number_parser.parse_all_numbers(t)
+
+    # cmd = a.db.get_action(t)
+
+    # # Is There A Matching Command?
+    # if cmd is not None:
+    #     # Run The 'valid_sentence_command' If It's Set
+    #     os.system('clear')
+    #     if a.config.options['valid_sentence_command']:
+    #         subprocess.call([a.config.options['valid_sentence_command'], text])
+    #     # Should We Be Passing Words?
+    #     #os.system('clear')
+    #     if a.config.options['pass_words']:
+    #         cmd += " " + t
+    #     print("\x1b[32m< ? >\x1b[0m {0}".format(t))
+    #     run_command(a, cmd)
+
     # Is There A Matching Command?
     if t in a.config.commands:
         # Run The 'valid_sentence_command' If It's Set
         os.system('clear')
         print("Open Assistant: \x1b[32mListening\x1b[0m")
         if a.config.options['valid_sentence_command']:
-            subprocess.call(a.config.options['valid_sentence_command'],
-                            shell=True)
+            subprocess.call([a.config.options['valid_sentence_command'], text], shell=True)
         cmd = a.config.commands[t]
         # Should We Be Passing Words?
         os.system('clear')
@@ -78,28 +92,14 @@ def recognizer_finished(a, recognizer, text):
         print("\x1b[32m< ! >\x1b[0m {0}".format(t))
         run_command(a, cmd)
         log_history(a, text)
-    #elif numt in self.commands:
-    #    # Run 'valid_sentence_command' Set
-    #    os.system('clear')
-    #    print("Open Assistant: \x1b[32mListening\x1b[0m")
-    #    if self.config.options['valid_sentence_command']:
-    #        subprocess.call(self.config.options['valid_sentence_command'],
-    #                        shell=True)
-    #    cmd = self.commands[numt]
-    #    cmd = cmd.format(*nums)
-    #    # Should We Be Passing Words?
-    #    if self.config.options['pass_words']:
-    #        cmd += " " + t
-    #    print("\x1b[32m< ! >\x1b[0m {0}".format(t))
-    #    self.run_command(cmd)
-    #    self.log_history(text)
+
     else:
         # Run The Invalid_sentence_command If It's Set
+        logger.debug("Unrecognized command: {}".format(t))
         if a.config.options['invalid_sentence_command']:
-            subprocess.call(a.config.options['invalid_sentence_command'],
-                            shell=True)
+            subprocess.call([a.config.options['invalid_sentence_command'], text])
         print("\x1b[31m< ? >\x1b[0m {0}".format(t))
-        
+
 
 def log_history(a, text):
     if a.config.options['history']:
@@ -112,7 +112,6 @@ def log_history(a, text):
         with open(a.config.history_file, 'w') as hfile:
             for line in a.history:
                 hfile.write(line + '\n')
-                
 
 def run_command(a, cmd):
     """PRINT COMMAND AND RUN"""
@@ -121,7 +120,7 @@ def run_command(a, cmd):
     subprocess.call(cmd, shell=True)
     recognizer.listen()
 
-    
+
 def process_command(self, command):
     print(command)
     if command == "listen":
@@ -138,49 +137,93 @@ def process_command(self, command):
         self.quit()
 
 
-
-
 if __name__ == '__main__':
-    
+
+    from gi.repository import GObject
+
+    from core import Config, Assistant
+
     # Parse command-line options,
     #  use `Config` to load mind configuration
     #  command-line overrides config file
     args = _parser(sys.argv[1:])
+    if args.debug:
+        logging.root.setLevel(logging.DEBUG)
     logger.debug("Arguments: {args}".format(args=args))
 
-
     conf = Config(path=args.mind_dir, **vars(args))
-    
-    
+
+
+    # Database Prototyping
+    # from core.util.db import DB
+    # db = DB(os.path.join(conf.cache_dir, "db"))
+    # db.create_schema()
+    # for prompt, command in conf.commands.items():
+    #     print("Adding {} -> {}".format(prompt, command))
+    #     db.add_action(prompt, command)
+
+
+
     #
-    # Further patching to ease transition..
+    # Pre-Configuration
     #
-    
+
     # Configure Language
     logger.debug("Configuring Module: Language")
+
+    # Language Paths
     conf.strings_file = os.path.join(conf.cache_dir, "sentences.corpus")
     conf.dic_file = os.path.join(conf.cache_dir, 'dic')
+    # conf.lm_file = os.path.join(conf.cache_dir, 'lm')
     conf.lang_file = os.path.join(conf.cache_dir, 'lm')
+    #XXX: hard coding this for now, sorry :(
+    conf.hmm_path = "/usr/local/share/pocketsphinx/model/en-us/en-us"
     conf.fsg_file = None #os.path.join(conf.cache_dir, 'fsg')
-    # sphinx_jsgf2fsg < conf.jsgf_file > conf.fsg_file
-    l = LanguageUpdater(conf)
-    l.update_language()
-    
+
+
+    # Generate Language Files
+    if args.update:
+        from modules.language import LanguageUpdater
+
+        # create_strings_file(conf.strings_file, db.get_prompts()) # conf.commands)
+        # create_sphinx_files(conf.strings_file, conf.lm_file, conf.dic_file)
+
+        l = LanguageUpdater(conf)
+        l.update_language()
+
+
+
+
+
     # Configure Recognizer
     logger.debug("Configuring Module: Speech Recognition")
+    from modules.speech_recognition.gst import Recognizer
+
+    # recognizer = Recognizer(args.microphone, dic_file=conf.dic_file, lm_file=conf.lm_file)
     recognizer = Recognizer(conf)
 
     #
-    # End patching
+    # End Pre-Configuration
     #
-    
+
 
     # A configured Assistant
     a = Assistant(config=conf)
-    
+    # a.db = db
+
+
+    #
+    # Post-Configuration
+    #
+
     recognizer.connect('finished', lambda rec, txt, agent=a: recognizer_finished(agent, rec, txt))
-        
-    
+
+    #
+    # End Post-Configuration
+    #
+
+
+
     #
     # Questionable dependencies
     #
@@ -201,7 +244,7 @@ if __name__ == '__main__':
     #  could supplant GObject features
     #a.run()
     recognizer.listen()
-    
+
 
     # Start Main Loop
     try:
@@ -211,4 +254,3 @@ if __name__ == '__main__':
         print(e)
         main_loop.quit()
         sys.exit()
-        

@@ -15,7 +15,7 @@ export KEYPRESS="xvkbd -xsendevent -secure -text"
 export TERMINAL="tmux new-window "
 
 # Use system speech synthesizer on macOS
-if [ "$(uname)" = 'Darwin' ]
+if [ "$(uname)" = "Darwin" ]
 then
         #Mac OSX
         export VOICE="say"

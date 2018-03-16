@@ -9,8 +9,8 @@ import requests
 
 #from .hasher import Hasher
 
-
 NET_TEST_SERVER = "http://www.speech.cs.cmu.edu"
+
 
 class LanguageUpdater:
     """
@@ -25,7 +25,7 @@ class LanguageUpdater:
     def __init__(self, config):
         self.config = config
         self.create_strings_file()
-        
+
         #self.hasher = Hasher(config)
 
     # def update_language_if_changed(self):
@@ -52,15 +52,55 @@ class LanguageUpdater:
     #     self.new_hash = hasher.hexdigest()
     #
     #     return self.new_hash != self.stored_hash
-    
 
+
+    # def create_strings_file(path, source={}):
     def create_strings_file(self):
         # Open Strings File
+        # with open(path, 'w+') as strings:
         with open(self.config.strings_file, 'w') as strings:
             # Add Command Words To The Corpus
+            # for cmd in source:
+            #     strings.write(cmd.strip().replace('%d', '') + "\n")
             for voice_cmd in sorted(self.config.commands.keys()):
                 strings.write(voice_cmd.strip().replace('%d', '') + "\n")
 
+    # def create_sphinx_files(source, lm_path, dic_path):
+    #     """Update the language using the online lmtool"""
+    #     logger.debug("\x1b[32mUpdating Language\x1b[0m")
+    #
+    #     host = 'http://www.speech.cs.cmu.edu'
+    #     url = host + '/cgi-bin/tools/lmtool/run'
+    #
+    #     # SUBMIT THE CORPUS TO THE LMTOOL
+    #     response_text = ""
+    #     with open(source, 'rb') as corpus:
+    #         files = {'corpus': corpus}
+    #         values = {'formtype': 'simple'}
+    #
+    #         r = requests.post(url, files=files, data=values)
+    #         response_text = r.text
+    #
+    #     # PARSE RESPONSE TO GET URLS OF THE FILES WE NEED
+    #     path_re = r'.*<title>Index of (.*?)</title>.*'
+    #     number_re = r'.*TAR([0-9]*?)\.tgz.*'
+    #     for line in response_text.split('\n'):
+    #         # ERROR RESPONSE
+    #         if "[_ERRO_]" in line:
+    #             return 1
+    #         # IF WE FOUND THE DIRECTORY, KEEP IT AND DON'T BREAK
+    #         if re.search(path_re, line):
+    #             path = host + re.sub(path_re, r'\1', line)
+    #         # IF WE FOUND THE NUMBER, KEEP IT AND BREAK
+    #         elif re.search(number_re, line):
+    #             number = re.sub(number_re, r'\1', line)
+    #             break
+    #
+    #     lm_url = path + '/' + number + '.lm'
+    #     dic_url = path + '/' + number + '.dic'
+    #
+    #     _download_file(lm_url, lm_path)
+    #     _download_file(dic_url, dic_path)
 
     def update_language(self):
         """Update the language using the online lmtool"""
@@ -110,3 +150,10 @@ class LanguageUpdater:
             with open(path, 'wb') as f:
                 for chunk in r:
                     f.write(chunk)
+
+    # def _download_file(url, dest):
+    #     r = requests.get(url, stream=True)
+    #     if r.status_code == 200:
+    #         with open(dest, 'wb') as f:
+    #             for chunk in r:
+    #                 f.write(chunk)

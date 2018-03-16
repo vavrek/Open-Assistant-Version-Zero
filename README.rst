@@ -1,14 +1,14 @@
 Open Assistant
 =============
 
-Open Assistant is an evolving open source artificial intelligence agent able 
+Open Assistant is an evolving open source artificial intelligence agent able
 to interact in basic conversation and automate an increasing number of tasks.
 
-Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
-working group lead by `Andrew Vavrek <https://youtu.be/cXqEv2OVwHE>`__, this software 
-is an extension of `Blather <https://gitlab.com/jezra/blather>`__ 
-by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee>`__ 
-by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work 
+Maintained by the `Open Assistant <http://www.openassistant.org/>`__
+working group lead by `Andrew Vavrek <https://youtu.be/cXqEv2OVwHE>`__, this software
+is an extension of `Blather <https://gitlab.com/jezra/blather>`__
+by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee>`__
+by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work
 done by `Jonathan Kulp <http://jonathankulp.org/>`__.
 
 
@@ -30,7 +30,7 @@ Useful Tools
 * aplay - console audio player
 * plaympeg - console mp3 player
 * projectm - visualizations responsive to sound
-* wmctrl - window manager control. opening, closing, resize, switch windows. 
+* wmctrl - window manager control. opening, closing, resize, switch windows.
 * xdotool - command line x automation tool
 * xvkbd - virtual keyboard for x
 
