@@ -1,8 +1,8 @@
 Open Assistant
 =============
 
-Open Assistant is an evolving open source artificial intelligence agent able 
-to interact in basic conversation and automate an increasing number of tasks.
+Open Assistant is an prototype open source artificial intelligence agent able 
+to interact in basic conversations and automate operating system tasks.
 
 Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
 working group lead by `Andrew Vavrek <https://youtu.be/cXqEv2OVwHE>`__, this software 
@@ -11,6 +11,9 @@ by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee
 by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work 
 done by `Jonathan Kulp <http://jonathankulp.org/>`__.
 
+This is the first and original version of Open Assistant.
+The latest version can be found here:
+https://github.com/openassistant/oa-core/tree/next
 
 Dependencies
 ------------
@@ -52,8 +55,11 @@ Running Open Assistant
 * To change assistant commands and language, edit ``conf/commands.json``. Exit and relaunch ``run.sh``.
 
 
-Open Assistant Fork
-==================
+Open Assistant Versions
+=======================
+
+New Open Assistant:
+https://github.com/openassistant/oa-core/tree/next
 
 Open Assistant fork for Crux System:
 https://github.com/s1lvino/c9-ports/tree/master/openassistant
