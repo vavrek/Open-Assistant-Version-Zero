@@ -1,7 +1,7 @@
 Open Assistant
 =============
 
-Open Assistant is an prototype open source artificial intelligence agent able 
+Open Assistant is a prototype open source voice assistant able 
 to interact in basic conversations and automate operating system tasks.
 
 Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
