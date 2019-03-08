@@ -5,7 +5,7 @@ Open Assistant is a prototype open source voice assistant able
 to interact in basic conversations and automate operating system tasks.
 
 Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
-working group lead by `Andrew Vavrek <https://youtu.be/cXqEv2OVwHE>`__, this software 
+working group lead by `Andrew Vavrek <https://vavrek.com>`__, this software 
 is an extension of `Blather <https://gitlab.com/jezra/blather>`__ 
 by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee>`__ 
 by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work 
