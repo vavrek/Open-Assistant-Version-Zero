@@ -58,7 +58,7 @@ Running Open Assistant
 Open Assistant Versions
 =======================
 
-New Open Assistant:
+Latest Open Assistant:
 https://github.com/openassistant/oa-core/tree/next
 
 Open Assistant fork for Crux System:
