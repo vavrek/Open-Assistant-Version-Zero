@@ -1,4 +1,4 @@
-Open Assistant
+Open Assistant (Voice Assistant)
 =============
 
 Open Assistant is a prototype open source voice assistant able 
@@ -19,7 +19,7 @@ Dependencies
 ------------
 
 * `Arch Linux <https://www.archlinux.org/>`_ or `Ubuntu Linux <http://openassistant.org/forum/support/ubuntu-16-04-installation/>`_ (Testing Soon on `macOS <https://www.apple.com/macos>`_)
-* `Python 3.5 <https://www.python.org/downloads>`__
+* `Python 3.8.3 <https://www.python.org/downloads>`__
 * `PocketSphinx 5PreAlpha <https://github.com/cmusphinx/pocketsphinx>`__
 * `GStreamer-1.0 <https://github.com/GStreamer/gstreamer>`__
 * `GStreamer-1.0 Base Plugins <https://github.com/GStreamer/gst-plugins-base>`__
