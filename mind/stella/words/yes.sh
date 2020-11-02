@@ -1,17 +1,21 @@
 #!/bin/bash
 
+# OpenAssistant 0.04
+# 2016 General Public License V3
+# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
+
 # yes.sh
 
-TOPIC=$(echo $(cat ./mind/stella/words/topic))
+TOPIC=$(echo $(cat $MINDDIR/words/topic))
 
 case $TOPIC in
 "none")
   echo "ok..." | $VOICE
   ;;
 "diagnostics")
-  ./mind/stella/words/diagnostics.sh
+  $MINDDIR/words/diagnostics.sh
   ;;
 "jokes")
- shuf -n 1 ./mind/stella/words/jokes | tee /dev/tty | $VOICE
+ shuf -n 1 $MINDDIR/words/jokes | tee /dev/tty | $VOICE
   ;;
 esac

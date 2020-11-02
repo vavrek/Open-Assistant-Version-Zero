@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
 
-# OpenAssistant 0.04
-# 2016 General Public License V3
-# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
-
-# Internet Connection Test By Kendy Hikaru And Kendy Hikaru
-
 # nettest.py - Internet Connection Test
 
 import time
 import urllib.request, urllib.parse, urllib.error
 
-REMOTE_SERVER = "http://www.speech.cs.cmu.edu"
+REMOTE_SERVER = "https://weblife.org"
 
 def is_connected():
 
