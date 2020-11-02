@@ -1,9 +1,5 @@
 #!/usr/bin/env python3.5
 
-# OpenAssistant 0.04
-# 2016 General Public License V3
-# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
-
 # weather.py - Get Weather Forecast From Dark Sky (darksky.net)
 
 import datetime
