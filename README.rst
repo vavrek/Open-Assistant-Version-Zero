@@ -4,7 +4,7 @@ Open Assistant (Version Zero)
 Open Assistant is a prototype open source voice assistant able 
 to interact in basic scripted conversations and automate operating system tasks.
 
-This is the first (Version Zero) of Open Assistant, which is highly Linux dependent.
+This is "Version Zero" of Open Assistant, which is highly Linux dependent.
 
 `The newest version <https://github.com/openassistant/oa-core>`_ runs entirely in Python and is more portable.
 
