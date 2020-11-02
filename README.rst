@@ -1,8 +1,7 @@
 Open Assistant (Version Zero)
 =============
 
-Open Assistant is a prototype open source voice assistant able 
-to interact in basic scripted conversations and automate operating system tasks.
+Open Assistant is a prototype open source voice assistant able to automate operating system tasks and engage in simple scripted conversations.
 
 This is "Version Zero" of Open Assistant, which is highly Linux dependent.
 
@@ -46,9 +45,9 @@ Running Open Assistant
 
 * If ``$MINDDIR/words/commands.json`` has been changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
 
-* Say "Hello Stella" and listen for a reply. You will need to adjust your microphone settings an avoid noisy environments for best results.
+* Say "Hello Stella" and listen for a reply. You will need to adjust your microphone settings and avoid noisy environments for best results.
 
-* To change commands, edit ``words/commands.json``. Save, quit ``oa.py``, then relaunch ``oa.sh``.
+* To learn and change commands, edit ``words/commands.json``. Save, quit ``oa.py``, then relaunch ``oa.sh`` to update.
 
 
 Learn More
