@@ -51,6 +51,10 @@ Running Open Assistant
 
 Learn More
 =======================
+OA Main Site: https://openassistant.org/wp/
+
+OA Wiki: https://github.com/openassistant/oa-core/wiki
+
 Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
 working group lead by `Andrew Vavrek <https://vavrek.com>`__, this software 
 is an extension of `Blather <https://gitlab.com/jezra/blather>`__ 
@@ -58,10 +62,6 @@ by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee
 by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work 
 done by `Jonathan Kulp <http://jonathankulp.org/>`__.
 
-Main Site: https://openassistant.org/wp/
-
-Wiki: https://github.com/openassistant/oa-core/wiki
-
 Support OA!
 =======================
-OA Patreon: https://www.patreon.com/openassistant
+Patreon: https://www.patreon.com/openassistant
