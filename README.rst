@@ -56,11 +56,9 @@ Running Open Assistant
 * To change commands, edit ``words/commands.json``. Save, quit ``oa.py``, then relaunch ``oa.sh``.
 
 
-Open Assistant Versions
+Learn More!
 =======================
 
-Latest Open Assistant:
-https://github.com/openassistant/oa-core
+https://openassistant.org/wp/
 
-Open Assistant fork for Crux System:
-https://github.com/s1lvino/c9-ports/tree/master/openassistant
+https://github.com/openassistant/oa-core/wiki
