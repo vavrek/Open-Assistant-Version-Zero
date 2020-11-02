@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 
-# OpenAssistant 0.04
-# 2016 General Public License V3
-# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
-
 # weather.py - Get Weather Forecast From Dark Sky (darksky.net)
 
 # Get Your API Key And Longitude / Latitude At: https://darksky.net/dev/
+
 # Install 'forecastio' module with: pip install python-forcastio
 
 import forecastio
