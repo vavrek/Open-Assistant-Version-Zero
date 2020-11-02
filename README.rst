@@ -1,4 +1,4 @@
-Open Assistant
+Open Assistant (Version Zero)
 =============
 
 Open Assistant is a prototype open source voice assistant able 
