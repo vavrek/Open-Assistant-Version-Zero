@@ -44,7 +44,7 @@ Running Open Assistant
 
 * Command variables will be set and ``oa.py`` will launch.
 
-* If ``$MINDDIR/conf/commands.json`` has been changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
+* If ``$MINDDIR/words/commands.json`` has been changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
 
 * To change commands, edit ``words/commands.json``. Save, quit ``oa.py``, then relaunch ``oa.sh``.
 
