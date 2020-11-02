@@ -1,12 +1,7 @@
 #!/bin/bash
 
-# OpenAssistant 0.04
-# 2016 General Public License V3
-# By Andrew Vavrek, Clayton G. Hobbs, Jezra, Jonathan Kulp
-
 # Stella's Age Script
 
-# birthday.sh
 # import dateutil *
 
 # from dateutil.relativedelta import relativedelta
