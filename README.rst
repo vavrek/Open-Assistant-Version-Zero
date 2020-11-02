@@ -2,7 +2,7 @@ Open Assistant
 =============
 
 Open Assistant is a prototype open source voice assistant able 
-to interact in basic conversations and automate operating system tasks.
+to interact in basic scripted conversations and automate operating system tasks.
 
 Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
 working group lead by `Andrew Vavrek <https://vavrek.com>`__, this software 
@@ -11,9 +11,10 @@ by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee
 by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work 
 done by `Jonathan Kulp <http://jonathankulp.org/>`__.
 
-This is the first and original version of Open Assistant.
-The latest version can be found here:
-https://github.com/openassistant/oa-core/tree/next
+This is the first (Version Zero) of Open Assistant, which is highly Linux dependent.
+
+`The newest version <https://github.com/openassistant/oa-core>`_ runs entirely in Python and is more portable.
+
 
 Dependencies
 ------------
@@ -59,7 +60,7 @@ Open Assistant Versions
 =======================
 
 Latest Open Assistant:
-https://github.com/openassistant/oa-core/tree/next
+https://github.com/openassistant/oa-core
 
 Open Assistant fork for Crux System:
 https://github.com/s1lvino/c9-ports/tree/master/openassistant
