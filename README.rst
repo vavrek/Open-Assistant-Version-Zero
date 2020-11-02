@@ -36,15 +36,17 @@ Running Open Assistant
 
 *  `Download <https://github.com/vavrek/Open-Assistant/archive/master.zip>`__ and extract the latest ``Open-Assistant-master.zip`` package.
 
-* Edit ``oa.sh`` to configure your desired variables, then save.
+* Edit ``oa.sh`` to choose your desired variables, then save.
 
 * Make ``oa.sh`` executable with: ``$chmod +x ./oa.sh``
 
 * Launch ``./oa.sh``
 
-* Command variables will be set and ``oa.py`` will launch.
+* Command variables will be set and ``oa.py`` will run.
 
 * If ``$MINDDIR/words/commands.json`` has been changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
+
+* Say "Hello Stella" and listen for a reply. You will need to adjust your microphone settings an avoid noisy environments for best results.
 
 * To change commands, edit ``words/commands.json``. Save, quit ``oa.py``, then relaunch ``oa.sh``.
 
