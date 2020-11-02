@@ -41,19 +41,19 @@ Useful Tools
 Running Open Assistant
 ---------------------
 
-* Download and unpack the latest ``openassistant-master.zip`` package.
+*  `Download <https://github.com/vavrek/Open-Assistant/archive/master.zip>`__ and extract the latest ``Open-Assistant-master.zip`` package.
 
-* Edit ``oa.sh`` to configure desired variables, then save.
+* Edit ``oa.sh`` to configure your desired variables, then save.
 
 * Make ``oa.sh`` executable with: ``$chmod +x ./oa.sh``
 
-* Launch ``./oa.sh -c -H20 -m0 -M mind/boot``. Global variables will be set and ``oa.py`` will launch.
+* Launch ``./oa.sh``
 
-* If ``$MINDDIR/conf/commands.json`` has changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
+* Command variables will be set and ``oa.py`` will launch.
 
-* Say `Launch Open Assistant` to enable operating system control commands such as `Maximize Window` and `Fullscreen`. Say `Launch Stella` to initiate a dialogue with her mind. To have Stella quit say `Goodbye Stella`. Say `Close Open Assistant` to quit operating system command recognition.
+* If ``$MINDDIR/conf/commands.json`` has been changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
 
-* To change assistant commands and language, edit ``words/commands.json``. Save, exit OA, and relaunch ``oa.sh``.
+* To change commands, edit ``words/commands.json``. Save, quit ``oa.py``, then relaunch ``oa.sh``.
 
 
 Open Assistant Versions
