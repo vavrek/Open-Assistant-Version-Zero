@@ -19,7 +19,7 @@ This is the first (Version Zero) of Open Assistant, which is highly Linux depend
 Dependencies
 ------------
 
-* `Arch Linux <https://www.archlinux.org/>`_ or `Ubuntu Linux <http://openassistant.org/forum/support/ubuntu-16-04-installation/>`_ (Testing Soon on `macOS <https://www.apple.com/macos>`_)
+* `Arch Linux <https://www.archlinux.org/>`_ or `Ubuntu Linux <http://openassistant.org/forum/support/ubuntu-16-04-installation/>`_
 * `Python 3.5 <https://www.python.org/downloads>`__
 * `PocketSphinx 5PreAlpha <https://github.com/cmusphinx/pocketsphinx>`__
 * `GStreamer-1.0 <https://github.com/GStreamer/gstreamer>`__
@@ -43,17 +43,17 @@ Running Open Assistant
 
 * Download and unpack the latest ``openassistant-master.zip`` package.
 
-* Edit ``run.sh`` to configure desired variables, then save.
+* Edit ``oa.sh`` to configure desired variables, then save.
 
-* Make ``run.sh`` executable with: ``$chmod +x ./run.sh``
+* Make ``oa.sh`` executable with: ``$chmod +x ./oa.sh``
 
-* Run ``./run.sh -c -H20 -m0 -M mind/boot``. Global variables will be set and ``run.py`` will launch.
+* Launch ``./oa.sh -c -H20 -m0 -M mind/boot``. Global variables will be set and ``oa.py`` will launch.
 
 * If ``$MINDDIR/conf/commands.json`` has changed and your machine is online, a new dictionary and language model will be created via the `Sphinx Knowledge Base Tool <http://www.speech.cs.cmu.edu/tools/lmtool.html>`__.
 
 * Say `Launch Open Assistant` to enable operating system control commands such as `Maximize Window` and `Fullscreen`. Say `Launch Stella` to initiate a dialogue with her mind. To have Stella quit say `Goodbye Stella`. Say `Close Open Assistant` to quit operating system command recognition.
 
-* To change assistant commands and language, edit ``conf/commands.json``. Exit and relaunch ``run.sh``.
+* To change assistant commands and language, edit ``words/commands.json``. Save, exit OA, and relaunch ``oa.sh``.
 
 
 Open Assistant Versions
