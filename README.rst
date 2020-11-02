@@ -4,13 +4,6 @@ Open Assistant (Version Zero)
 Open Assistant is a prototype open source voice assistant able 
 to interact in basic scripted conversations and automate operating system tasks.
 
-Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
-working group lead by `Andrew Vavrek <https://vavrek.com>`__, this software 
-is an extension of `Blather <https://gitlab.com/jezra/blather>`__ 
-by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee>`__ 
-by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work 
-done by `Jonathan Kulp <http://jonathankulp.org/>`__.
-
 This is the first (Version Zero) of Open Assistant, which is highly Linux dependent.
 
 `The newest version <https://github.com/openassistant/oa-core>`_ runs entirely in Python and is more portable.
@@ -56,9 +49,19 @@ Running Open Assistant
 * To change commands, edit ``words/commands.json``. Save, quit ``oa.py``, then relaunch ``oa.sh``.
 
 
-Learn More!
+Learn More
 =======================
+Maintained by the `Open Assistant <http://www.openassistant.org/>`__ 
+working group lead by `Andrew Vavrek <https://vavrek.com>`__, this software 
+is an extension of `Blather <https://gitlab.com/jezra/blather>`__ 
+by `Jezra <http://www.jezra.net/>`__, `Kaylee <https://github.com/Ratfink/kaylee>`__ 
+by `Clayton G. Hobbs <https://bzratfink.wordpress.com/>`__, and includes work 
+done by `Jonathan Kulp <http://jonathankulp.org/>`__.
 
-https://openassistant.org/wp/
+Main Site: https://openassistant.org/wp/
 
-https://github.com/openassistant/oa-core/wiki
+Wiki: https://github.com/openassistant/oa-core/wiki
+
+Support OA!
+=======================
+OA Patreon: https://www.patreon.com/openassistant
