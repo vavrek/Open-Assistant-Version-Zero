@@ -1,0 +1,13 @@
+{
+
+"commands": {
+    "open assistant": "aplay /home/vav/stella/mind/boot/sounds/beep_open.wav && ./oa -c -H20 -m1 -M mind/stella"
+},
+
+"continuous": true,
+"history": false,
+"microphone": true,
+"interface": null,
+"valid_sentence_command": false,
+"invalid_sentence_command": false
+}
