@@ -5,7 +5,9 @@ Open Assistant is a prototype open source voice assistant able to automate opera
 
 This is "Version Zero" of Open Assistant, which is highly Linux dependent.
 
-`The newest version <https://github.com/openassistant/oa-core>`_ runs entirely in Python and is more portable.
+`The newest version of OA Core<https://github.com/openassistant/oa-core>`_ runs entirely in Python and is more portable.
+
+Check out what `kidsodateless <https://github.com/kidsodateless/oa-core>`_ did with it: `https://youtu.be/D99V9Ge9IaE <https://youtu.be/D99V9Ge9IaE>`
 
 
 Dependencies
