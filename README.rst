@@ -1,4 +1,4 @@
-Open Assistant (Version Zero)
+Open Assistant
 =============
 
 Open Assistant is a prototype open source voice assistant able to automate operating system tasks and engage in simple scripted conversations.
