@@ -50,7 +50,7 @@ Running Open Assistant
 * To learn and change commands, edit ``words/commands.json``. Save, quit ``oa.py``, then relaunch ``oa.sh`` to update.
 
 
-Learn More
+Learn More About OA
 =======================
 OA Main Site: https://openassistant.org/wp/
 
