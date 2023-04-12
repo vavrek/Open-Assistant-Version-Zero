@@ -1,5 +1,8 @@
-Open Assistant
-=============
+Open Assistant (Version Zero)
+=============================
+This version is quite outdated. Might be still useful somehow.
+
+Current development is on GitLab: https://gitlab.com/open-assistant/oa-arch
 
 Open Assistant is a prototype open source voice assistant able to automate operating system tasks and engage in simple scripted conversations.
 
