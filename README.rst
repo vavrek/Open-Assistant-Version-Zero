@@ -57,7 +57,7 @@ Learn More
 =======================
 OA Main Site: https://openassistant.org/wp/
 
-OA Wiki: https://github.com/openassistant/oa-core/wiki
+OA Wiki: https://openassistant.org/wp/wiki
 
 Maintained by working group lead by `Andrew Vavrek <https://vavrek.com>`__, Open Assistant 
 is an extension of `Blather <https://gitlab.com/jezra/blather>`__ 
